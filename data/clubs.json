@@ -1,0 +1,2927 @@
+[
+  {
+    "id": "club_realmadrid",
+    "answer": "Real Madrid",
+    "aliases": [
+      "ريال مدريد",
+      "ريال",
+      "الريال",
+      "Real Madrid"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1902.",
+      "من ألواني المعروفة: الأبيض.",
+      "أنا نادٍ من مدريد، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: سانتياغو برنابيو. ومن منافسيّ المعروفين: برشلونة."
+    ],
+    "country": "إسبانيا",
+    "city": "مدريد",
+    "founded": 1902,
+    "colors": "الأبيض",
+    "historical_stadium": "سانتياغو برنابيو",
+    "rival": "برشلونة",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "قدّمت ستة وافدين جدد رسمياً ضد إسبانيول في أغسطس ٢٠٢٦، بينهم برناردو ودومفريس.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.realmadrid.com/en-US/news/football/first-team/latest-news/debut-en-partido-oficial-de-los-seis-nuevos-fichajes-del-real-madrid-22-08-2026",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "حققت لقبي الأوروبي الخامس عشر سنة ٢٠٢٤.",
+        "difficulty": 1,
+        "event_year": 2024,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/028e-1b07e18d875a-ba78e4b9d9fc-1000--real-madrid-win-champions-league-carvajal-and-vinicius-junior-see-off-dortmund/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_barcelona",
+    "answer": "Barcelona",
+    "aliases": [
+      "برشلونة",
+      "برشلونه",
+      "بارسا",
+      "البارسا",
+      "Barcelona"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1899.",
+      "من ألواني المعروفة: الأزرق والأحمر.",
+      "أنا نادٍ من برشلونة، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: كامب نو. ومن منافسيّ المعروفين: ريال مدريد."
+    ],
+    "country": "إسبانيا",
+    "city": "برشلونة",
+    "founded": 1899,
+    "colors": "الأزرق والأحمر",
+    "historical_stadium": "كامب نو",
+    "rival": "ريال مدريد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "أعلنت ضم رودري من مانشستر سيتي في أغسطس ٢٠٢٦ بعقد حتى ٢٠٣٠.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.fcbarcelona.com/en/football/first-team/news/4561501/fc-barcelona-sign-rodrigo-hernandez",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_atleticomadrid",
+    "answer": "Atlético Madrid",
+    "aliases": [
+      "أتلتيكو مدريد",
+      "اتلتيكو مدريد",
+      "اتليتيكو",
+      "أتلتيكو",
+      "Atlético Madrid"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1903.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من مدريد، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: فيسنتي كالديرون. ومن منافسيّ المعروفين: ريال مدريد."
+    ],
+    "country": "إسبانيا",
+    "city": "مدريد",
+    "founded": 1903,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "فيسنتي كالديرون",
+    "rival": "ريال مدريد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_sevilla",
+    "answer": "Sevilla",
+    "aliases": [
+      "إشبيلية",
+      "اشبيلية",
+      "اشبيليه",
+      "Sevilla"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1890.",
+      "من ألواني المعروفة: الأبيض والأحمر.",
+      "أنا نادٍ من إشبيلية، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: رامون سانشيز بيزخوان. ومن منافسيّ المعروفين: ريال بيتيس."
+    ],
+    "country": "إسبانيا",
+    "city": "إشبيلية",
+    "founded": 1890,
+    "colors": "الأبيض والأحمر",
+    "historical_stadium": "رامون سانشيز بيزخوان",
+    "rival": "ريال بيتيس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_valencia",
+    "answer": "Valencia",
+    "aliases": [
+      "فالنسيا",
+      "ڤالنسيا",
+      "Valencia"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1919.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من فالنسيا، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: ميستايا. ومن منافسيّ المعروفين: ليفانتي."
+    ],
+    "country": "إسبانيا",
+    "city": "فالنسيا",
+    "founded": 1919,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "ميستايا",
+    "rival": "ليفانتي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_villarreal",
+    "answer": "Villarreal",
+    "aliases": [
+      "فياريال",
+      "ڤياريال",
+      "Villarreal"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1923.",
+      "من ألواني المعروفة: الأصفر.",
+      "أنا نادٍ من فياريال، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: إل مادريغال. ومن منافسيّ المعروفين: فالنسيا."
+    ],
+    "country": "إسبانيا",
+    "city": "فياريال",
+    "founded": 1923,
+    "colors": "الأصفر",
+    "historical_stadium": "إل مادريغال",
+    "rival": "فالنسيا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_athleticclub",
+    "answer": "Athletic Club",
+    "aliases": [
+      "أتلتيك بلباو",
+      "اتلتيك بلباو",
+      "بلباو",
+      "اثلتيك بلباو",
+      "Athletic Club"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1898.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من بلباو، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: سان ماميس. ومن منافسيّ المعروفين: ريال سوسيداد."
+    ],
+    "country": "إسبانيا",
+    "city": "بلباو",
+    "founded": 1898,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "سان ماميس",
+    "rival": "ريال سوسيداد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_realsociedad",
+    "answer": "Real Sociedad",
+    "aliases": [
+      "ريال سوسيداد",
+      "سوسيداد",
+      "Real Sociedad"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1909.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من سان سيباستيان، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: أنويتا. ومن منافسيّ المعروفين: أتلتيك بلباو."
+    ],
+    "country": "إسبانيا",
+    "city": "سان سيباستيان",
+    "founded": 1909,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "أنويتا",
+    "rival": "أتلتيك بلباو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_realbetis",
+    "answer": "Real Betis",
+    "aliases": [
+      "ريال بيتيس",
+      "بيتيس",
+      "بتيس",
+      "Real Betis"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1907.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من إشبيلية، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: بينيتو فيامارين. ومن منافسيّ المعروفين: إشبيلية."
+    ],
+    "country": "إسبانيا",
+    "city": "إشبيلية",
+    "founded": 1907,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "بينيتو فيامارين",
+    "rival": "إشبيلية",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_deportivolacoruna",
+    "answer": "Deportivo La Coruña",
+    "aliases": [
+      "ديبورتيفو لاكورونيا",
+      "ديبورتيفو",
+      "ديبورتيفو لا كرونيا",
+      "Deportivo La Coruña"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1906.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من لا كورونيا، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: ريازور. ومن منافسيّ المعروفين: سيلتا فيغو."
+    ],
+    "country": "إسبانيا",
+    "city": "لا كورونيا",
+    "founded": 1906,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "ريازور",
+    "rival": "سيلتا فيغو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_celtavigo",
+    "answer": "Celta Vigo",
+    "aliases": [
+      "سيلتا فيغو",
+      "سيلتا فيجو",
+      "سيلتا",
+      "Celta Vigo"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1923.",
+      "من ألواني المعروفة: الأزرق السماوي.",
+      "أنا نادٍ من فيغو، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: بالايدوس. ومن منافسيّ المعروفين: ديبورتيفو لاكورونيا."
+    ],
+    "country": "إسبانيا",
+    "city": "فيغو",
+    "founded": 1923,
+    "colors": "الأزرق السماوي",
+    "historical_stadium": "بالايدوس",
+    "rival": "ديبورتيفو لاكورونيا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_espanyol",
+    "answer": "Espanyol",
+    "aliases": [
+      "إسبانيول",
+      "اسبانيول",
+      "Espanyol"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1900.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من برشلونة، وأنتمي إلى كرة القدم في إسبانيا.",
+      "من الملاعب المرتبطة بتاريخي: كورنيلا إل برات. ومن منافسيّ المعروفين: برشلونة."
+    ],
+    "country": "إسبانيا",
+    "city": "برشلونة",
+    "founded": 1900,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "كورنيلا إل برات",
+    "rival": "برشلونة",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_manchesterunited",
+    "answer": "Manchester United",
+    "aliases": [
+      "مانشستر يونايتد",
+      "مان يونايتد",
+      "اليونايتد",
+      "يونايتد",
+      "Manchester United"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1878.",
+      "من ألواني المعروفة: الأحمر.",
+      "أنا نادٍ من مانشستر، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: أولد ترافورد. ومن منافسيّ المعروفين: مانشستر سيتي."
+    ],
+    "country": "إنكلترا",
+    "city": "مانشستر",
+    "founded": 1878,
+    "colors": "الأحمر",
+    "historical_stadium": "أولد ترافورد",
+    "rival": "مانشستر سيتي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_manchestercity",
+    "answer": "Manchester City",
+    "aliases": [
+      "مانشستر سيتي",
+      "مان سيتي",
+      "السيتي",
+      "سيتي",
+      "Manchester City"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1880.",
+      "من ألواني المعروفة: الأزرق السماوي.",
+      "أنا نادٍ من مانشستر، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الاتحاد. ومن منافسيّ المعروفين: مانشستر يونايتد."
+    ],
+    "country": "إنكلترا",
+    "city": "مانشستر",
+    "founded": 1880,
+    "colors": "الأزرق السماوي",
+    "historical_stadium": "ملعب الاتحاد",
+    "rival": "مانشستر يونايتد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "تعاقدت مع إنزو فرنانديز من تشيلسي في سبتمبر ٢٠٢٦ لخمس سنوات.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.mancity.com/news/mens/enzo-fernandez-signs-for-city-63923893",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "حصل إنزو فرنانديز عند انضمامه لي سنة ٢٠٢٦ على الرقم ١٧ الذي اشتهر به دي بروين.",
+        "difficulty": 3,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.mancity.com/news/mens/enzo-fernandez-squad-number-revealed-63923952",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "ضممت دوناروما من باريس في سبتمبر ٢٠٢٥ عقب رحيل إيدرسون.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.premierleague.com/en/news/4373807/man-city-sign-goalkeeper-donnarumma-from-psg",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_liverpool",
+    "answer": "Liverpool",
+    "aliases": [
+      "ليفربول",
+      "ليڤربول",
+      "Liverpool"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1892.",
+      "من ألواني المعروفة: الأحمر.",
+      "أنا نادٍ من ليفربول، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: أنفيلد. ومن منافسيّ المعروفين: إيفرتون."
+    ],
+    "country": "إنكلترا",
+    "city": "ليفربول",
+    "founded": 1892,
+    "colors": "الأحمر",
+    "historical_stadium": "أنفيلد",
+    "rival": "إيفرتون",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "أعلنت ضم برادلي باركولا من باريس سان جيرمان في أغسطس ٢٠٢٦.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.liverpoolfc.com/news/liverpool-sign-bradley-barcola-paris-saint-germain",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "أعلنت اتفاق إعارة رونالد أراوخو من برشلونة لموسم ٢٠٢٦–٢٠٢٧، مشروطاً بالتصاريح والموافقة الدولية.",
+        "difficulty": 3,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.liverpoolfc.com/news/liverpool-agree-deal-sign-ronald-araujo-loan",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "خرجت من ربع نهائي دوري الأبطال ٢٠٢٦ أمام باريس بمجموع ٤–٠.",
+        "difficulty": 1,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/02a5-20901454177c-738c0ac757df-1000--champions-league-final-meet-the-teams/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "ضممت ألكسندر إيزاك من نيوكاسل في سبتمبر ٢٠٢٥ ليحمل الرقم ٩.",
+        "difficulty": 1,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.liverpoolfc.com/news/liverpool-complete-signing-alexander-isak",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_arsenal",
+    "answer": "Arsenal",
+    "aliases": [
+      "آرسنال",
+      "ارسنال",
+      "أرسنال",
+      "Arsenal"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1886.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الإمارات. ومن منافسيّ المعروفين: توتنهام."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1886,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "ملعب الإمارات",
+    "rival": "توتنهام",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "خسرت نهائي دوري الأبطال ٢٠٢٦ أمام باريس بركلات الترجيح بعد تعادل ١–١.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/02a5-20901454177c-738c0ac757df-1000--champions-league-final-meet-the-teams/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "وقّعت مع المهاجم السويدي غيوكيريس من سبورتينغ لشبونة في يوليو ٢٠٢٥.",
+        "difficulty": 1,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.arsenal.com/gallery/gallery-viktor-gyokeres-signs-aJwUR1w3gKni",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_chelsea",
+    "answer": "Chelsea",
+    "aliases": [
+      "تشيلسي",
+      "تشلسي",
+      "Chelsea"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1905.",
+      "من ألواني المعروفة: الأزرق.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: ستامفورد بريدج. ومن منافسيّ المعروفين: آرسنال."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1905,
+    "colors": "الأزرق",
+    "historical_stadium": "ستامفورد بريدج",
+    "rival": "آرسنال",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "غادرني إنزو فرنانديز إلى مانشستر سيتي في سبتمبر ٢٠٢٦.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.mancity.com/news/mens/enzo-fernandez-signs-for-city-63923893",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "خسرت أمام باريس في ثمن نهائي دوري الأبطال ٢٠٢٦ بمجموع ٨–٢.",
+        "difficulty": 1,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/02a5-20901454177c-738c0ac757df-1000--champions-league-final-meet-the-teams/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "فزت بكأس العالم للأندية الموسّع سنة ٢٠٢٥.",
+        "difficulty": 1,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.chelseafc.com/en/match/chelsea-vs-paris-saintgermain-fifa-club-world-cup-2025-07-13",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "هزمت باريس ٣–٠ بنهائي مونديال الأندية ٢٠٢٥ بفضل تألق بالمر.",
+        "difficulty": 3,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.chelseafc.com/en/match/chelsea-vs-paris-saintgermain-fifa-club-world-cup-2025-07-13",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_tottenhamhotspur",
+    "answer": "Tottenham Hotspur",
+    "aliases": [
+      "توتنهام",
+      "توتنهام هوتسبير",
+      "توتنهام هوتسبر",
+      "Tottenham Hotspur"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1882.",
+      "من ألواني المعروفة: الأبيض والكحلي.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: وايت هارت لين. ومن منافسيّ المعروفين: آرسنال."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1882,
+    "colors": "الأبيض والكحلي",
+    "historical_stadium": "وايت هارت لين",
+    "rival": "آرسنال",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "اتفقت على ضم أندرو روبرتسون بعد نهاية عقده مع ليفربول في صيف ٢٠٢٦.",
+        "difficulty": 2,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.liverpoolfc.com/news/andy-robertson-join-tottenham-hotspur",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "تأهلت للسوبر الأوروبي ٢٠٢٥ بصفتي بطل الدوري الأوروبي.",
+        "difficulty": 1,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/0299-1de417608530-15b01ff7b150-1000--paris-win-champions-league-doue-double-helps-secure-reco/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_newcastleunited",
+    "answer": "Newcastle United",
+    "aliases": [
+      "نيوكاسل",
+      "نيوكاسل يونايتد",
+      "Newcastle United"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1892.",
+      "من ألواني المعروفة: الأسود والأبيض.",
+      "أنا نادٍ من نيوكاسل، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: سانت جيمس بارك. ومن منافسيّ المعروفين: سندرلاند."
+    ],
+    "country": "إنكلترا",
+    "city": "نيوكاسل",
+    "founded": 1892,
+    "colors": "الأسود والأبيض",
+    "historical_stadium": "سانت جيمس بارك",
+    "rival": "سندرلاند",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_everton",
+    "answer": "Everton",
+    "aliases": [
+      "إيفرتون",
+      "ايفرتون",
+      "افرتون",
+      "Everton"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1878.",
+      "من ألواني المعروفة: الأزرق.",
+      "أنا نادٍ من ليفربول، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: غوديسون بارك. ومن منافسيّ المعروفين: ليفربول."
+    ],
+    "country": "إنكلترا",
+    "city": "ليفربول",
+    "founded": 1878,
+    "colors": "الأزرق",
+    "historical_stadium": "غوديسون بارك",
+    "rival": "ليفربول",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_astonvilla",
+    "answer": "Aston Villa",
+    "aliases": [
+      "أستون فيلا",
+      "استون فيلا",
+      "استون ڤيلا",
+      "Aston Villa"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1874.",
+      "من ألواني المعروفة: العنابي والأزرق السماوي.",
+      "أنا نادٍ من برمنغهام، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: فيلا بارك. ومن منافسيّ المعروفين: برمنغهام سيتي."
+    ],
+    "country": "إنكلترا",
+    "city": "برمنغهام",
+    "founded": 1874,
+    "colors": "العنابي والأزرق السماوي",
+    "historical_stadium": "فيلا بارك",
+    "rival": "برمنغهام سيتي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "توجت بالدوري الأوروبي ٢٠٢٦؛ أول لقب قاري لي منذ ١٩٨٢.",
+        "difficulty": 1,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefaeuropaleague/news/02a1-1fce257db598-8d600e9b2af4-1000--2025-26-europa-league-meet-the-winners/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "هزمت فرايبورغ ٣–٠ بنهائي الدوري الأوروبي ٢٠٢٦ في إسطنبول.",
+        "difficulty": 3,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefaeuropaleague/match/2047743--freiburg-vs-aston-villa/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_westhamunited",
+    "answer": "West Ham United",
+    "aliases": [
+      "وست هام",
+      "ويست هام",
+      "وست هام يونايتد",
+      "West Ham United"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1895.",
+      "من ألواني المعروفة: العنابي والأزرق السماوي.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: ملعب لندن. ومن منافسيّ المعروفين: ميلوول."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1895,
+    "colors": "العنابي والأزرق السماوي",
+    "historical_stadium": "ملعب لندن",
+    "rival": "ميلوول",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_leicestercity",
+    "answer": "Leicester City",
+    "aliases": [
+      "ليستر سيتي",
+      "ليستر",
+      "ليستر ستي",
+      "Leicester City"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1884.",
+      "من ألواني المعروفة: الأزرق.",
+      "أنا نادٍ من ليستر، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: كينغ باور. ومن منافسيّ المعروفين: نوتنغهام فورست."
+    ],
+    "country": "إنكلترا",
+    "city": "ليستر",
+    "founded": 1884,
+    "colors": "الأزرق",
+    "historical_stadium": "كينغ باور",
+    "rival": "نوتنغهام فورست",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_leedsunited",
+    "answer": "Leeds United",
+    "aliases": [
+      "ليدز",
+      "ليدز يونايتد",
+      "Leeds United"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1919.",
+      "من ألواني المعروفة: الأبيض.",
+      "أنا نادٍ من ليدز، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: إيلاند رود. ومن منافسيّ المعروفين: مانشستر يونايتد."
+    ],
+    "country": "إنكلترا",
+    "city": "ليدز",
+    "founded": 1919,
+    "colors": "الأبيض",
+    "historical_stadium": "إيلاند رود",
+    "rival": "مانشستر يونايتد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_nottinghamforest",
+    "answer": "Nottingham Forest",
+    "aliases": [
+      "نوتنغهام فورست",
+      "نوتنغهام",
+      "نوتينغهام فورست",
+      "Nottingham Forest"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1865.",
+      "من ألواني المعروفة: الأحمر.",
+      "أنا نادٍ من نوتنغهام، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: سيتي غراوند. ومن منافسيّ المعروفين: ديربي كاونتي."
+    ],
+    "country": "إنكلترا",
+    "city": "نوتنغهام",
+    "founded": 1865,
+    "colors": "الأحمر",
+    "historical_stadium": "سيتي غراوند",
+    "rival": "ديربي كاونتي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_wolverhamptonwanderers",
+    "answer": "Wolverhampton Wanderers",
+    "aliases": [
+      "وولفرهامبتون",
+      "ولفرهامبتون",
+      "وولفز",
+      "ولفز",
+      "Wolverhampton Wanderers"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1877.",
+      "من ألواني المعروفة: الذهبي والأسود.",
+      "أنا نادٍ من وولفرهامبتون، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: مولينيو. ومن منافسيّ المعروفين: وست بروميتش."
+    ],
+    "country": "إنكلترا",
+    "city": "وولفرهامبتون",
+    "founded": 1877,
+    "colors": "الذهبي والأسود",
+    "historical_stadium": "مولينيو",
+    "rival": "وست بروميتش",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_southampton",
+    "answer": "Southampton",
+    "aliases": [
+      "ساوثهامبتون",
+      "ساوثامبتون",
+      "Southampton"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1885.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من ساوثهامبتون، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: سانت ماري. ومن منافسيّ المعروفين: بورتسموث."
+    ],
+    "country": "إنكلترا",
+    "city": "ساوثهامبتون",
+    "founded": 1885,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "سانت ماري",
+    "rival": "بورتسموث",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_crystalpalace",
+    "answer": "Crystal Palace",
+    "aliases": [
+      "كريستال بالاس",
+      "كريستال بالاس اف سي",
+      "Crystal Palace"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1905.",
+      "من ألواني المعروفة: الأحمر والأزرق.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: سيلهرست بارك. ومن منافسيّ المعروفين: برايتون."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1905,
+    "colors": "الأحمر والأزرق",
+    "historical_stadium": "سيلهرست بارك",
+    "rival": "برايتون",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_brightonhovealbion",
+    "answer": "Brighton & Hove Albion",
+    "aliases": [
+      "برايتون",
+      "برايتون هوف ألبيون",
+      "Brighton & Hove Albion"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1901.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من برايتون وهوف، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: فالمر. ومن منافسيّ المعروفين: كريستال بالاس."
+    ],
+    "country": "إنكلترا",
+    "city": "برايتون وهوف",
+    "founded": 1901,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "فالمر",
+    "rival": "كريستال بالاس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_fulham",
+    "answer": "Fulham",
+    "aliases": [
+      "فولهام",
+      "فولام",
+      "Fulham"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1879.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: كرافن كوتاج. ومن منافسيّ المعروفين: تشيلسي."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1879,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "كرافن كوتاج",
+    "rival": "تشيلسي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_brentford",
+    "answer": "Brentford",
+    "aliases": [
+      "برينتفورد",
+      "برنتفورد",
+      "Brentford"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1889.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من لندن، وأنتمي إلى كرة القدم في إنكلترا.",
+      "من الملاعب المرتبطة بتاريخي: غريفين بارك. ومن منافسيّ المعروفين: كوينز بارك رينجرز."
+    ],
+    "country": "إنكلترا",
+    "city": "لندن",
+    "founded": 1889,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "غريفين بارك",
+    "rival": "كوينز بارك رينجرز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_bayernmunich",
+    "answer": "Bayern Munich",
+    "aliases": [
+      "بايرن ميونخ",
+      "بايرن",
+      "البايرن",
+      "Bayern Munich"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1900.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من ميونخ، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: أليانز أرينا. ومن منافسيّ المعروفين: بوروسيا دورتموند."
+    ],
+    "country": "ألمانيا",
+    "city": "ميونخ",
+    "founded": 1900,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "أليانز أرينا",
+    "rival": "بوروسيا دورتموند",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "ودّعت دوري الأبطال ٢٠٢٦ أمام باريس بنصف النهائي بمجموع ٦–٥.",
+        "difficulty": 1,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/02a5-20901454177c-738c0ac757df-1000--champions-league-final-meet-the-teams/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "تعاقدت مع لويس دياز من ليفربول سنة ٢٠٢٥ ومنحته الرقم ١٤.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://fcbayern.com/en/news/2025/07/fc-bayern-sign-luis-diaz-from-liverpool",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_borussiadortmund",
+    "answer": "Borussia Dortmund",
+    "aliases": [
+      "بوروسيا دورتموند",
+      "بروسيا دورتموند",
+      "دورتموند",
+      "Borussia Dortmund"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1909.",
+      "من ألواني المعروفة: الأصفر والأسود.",
+      "أنا نادٍ من دورتموند، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: فيستفالن شتاديون. ومن منافسيّ المعروفين: شالكه."
+    ],
+    "country": "ألمانيا",
+    "city": "دورتموند",
+    "founded": 1909,
+    "colors": "الأصفر والأسود",
+    "historical_stadium": "فيستفالن شتاديون",
+    "rival": "شالكه",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "وصلت نهائي دوري الأبطال ٢٠٢٤ وخسرت ٠–٢ أمام ريال مدريد.",
+        "difficulty": 2,
+        "event_year": 2024,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/028e-1b07e18d875a-ba78e4b9d9fc-1000--real-madrid-win-champions-league-carvajal-and-vinicius-junior-see-off-dortmund/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_bayerleverkusen",
+    "answer": "Bayer Leverkusen",
+    "aliases": [
+      "باير ليفركوزن",
+      "بايرن ليفركوزن",
+      "ليفركوزن",
+      "Bayer Leverkusen"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1904.",
+      "من ألواني المعروفة: الأحمر والأسود.",
+      "أنا نادٍ من ليفركوزن، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: باي أرينا. ومن منافسيّ المعروفين: كولن."
+    ],
+    "country": "ألمانيا",
+    "city": "ليفركوزن",
+    "founded": 1904,
+    "colors": "الأحمر والأسود",
+    "historical_stadium": "باي أرينا",
+    "rival": "كولن",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "غادرني فلوريان فيرتز إلى ليفربول في يونيو ٢٠٢٥.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.liverpoolfc.com/news/liverpool-agree-signing-florian-wirtz-bayer-leverkusen",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_rbleipzig",
+    "answer": "RB Leipzig",
+    "aliases": [
+      "لايبزيغ",
+      "لايبزيج",
+      "لايبزغ",
+      "ار بي لايبزيغ",
+      "RB Leipzig"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 2009.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من لايبزيغ، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: ريد بول أرينا. ومن منافسيّ المعروفين: دينامو دريسدن."
+    ],
+    "country": "ألمانيا",
+    "city": "لايبزيغ",
+    "founded": 2009,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "ريد بول أرينا",
+    "rival": "دينامو دريسدن",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_schalke04",
+    "answer": "Schalke 04",
+    "aliases": [
+      "شالكه",
+      "شالكة",
+      "شالكه 04",
+      "Schalke 04"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1904.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من غيلسنكيرشن، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: فيلتينس أرينا. ومن منافسيّ المعروفين: بوروسيا دورتموند."
+    ],
+    "country": "ألمانيا",
+    "city": "غيلسنكيرشن",
+    "founded": 1904,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "فيلتينس أرينا",
+    "rival": "بوروسيا دورتموند",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_werderbremen",
+    "answer": "Werder Bremen",
+    "aliases": [
+      "فيردر بريمن",
+      "فيردربريمن",
+      "بريمن",
+      "Werder Bremen"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1899.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من بريمن، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: فيسر شتاديون. ومن منافسيّ المعروفين: هامبورغ."
+    ],
+    "country": "ألمانيا",
+    "city": "بريمن",
+    "founded": 1899,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "فيسر شتاديون",
+    "rival": "هامبورغ",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_hamburgersv",
+    "answer": "Hamburger SV",
+    "aliases": [
+      "هامبورغ",
+      "هامبورج",
+      "هامبورغ اس في",
+      "Hamburger SV"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1887.",
+      "من ألواني المعروفة: الأبيض والأحمر.",
+      "أنا نادٍ من هامبورغ، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: فولكس بارك شتاديون. ومن منافسيّ المعروفين: فيردر بريمن."
+    ],
+    "country": "ألمانيا",
+    "city": "هامبورغ",
+    "founded": 1887,
+    "colors": "الأبيض والأحمر",
+    "historical_stadium": "فولكس بارك شتاديون",
+    "rival": "فيردر بريمن",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_wolfsburg",
+    "answer": "Wolfsburg",
+    "aliases": [
+      "فولفسبورغ",
+      "فولفسبورج",
+      "وولفسبورغ",
+      "Wolfsburg"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1945.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من فولفسبورغ، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: فولكسفاغن أرينا. ومن منافسيّ المعروفين: هانوفر."
+    ],
+    "country": "ألمانيا",
+    "city": "فولفسبورغ",
+    "founded": 1945,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "فولكسفاغن أرينا",
+    "rival": "هانوفر",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_borussiamonchengladbach",
+    "answer": "Borussia Mönchengladbach",
+    "aliases": [
+      "بوروسيا مونشنغلادباخ",
+      "مونشنغلادباخ",
+      "غلادباخ",
+      "Borussia Mönchengladbach"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1900.",
+      "من ألواني المعروفة: الأبيض والأسود والأخضر.",
+      "أنا نادٍ من مونشنغلادباخ، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: بوروسيا بارك. ومن منافسيّ المعروفين: كولن."
+    ],
+    "country": "ألمانيا",
+    "city": "مونشنغلادباخ",
+    "founded": 1900,
+    "colors": "الأبيض والأسود والأخضر",
+    "historical_stadium": "بوروسيا بارك",
+    "rival": "كولن",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_eintrachtfrankfurt",
+    "answer": "Eintracht Frankfurt",
+    "aliases": [
+      "آينتراخت فرانكفورت",
+      "اينتراخت فرانكفورت",
+      "فرانكفورت",
+      "Eintracht Frankfurt"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1899.",
+      "من ألواني المعروفة: الأحمر والأسود.",
+      "أنا نادٍ من فرانكفورت، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: فالد شتاديون. ومن منافسيّ المعروفين: كيكرز أوفنباخ."
+    ],
+    "country": "ألمانيا",
+    "city": "فرانكفورت",
+    "founded": 1899,
+    "colors": "الأحمر والأسود",
+    "historical_stadium": "فالد شتاديون",
+    "rival": "كيكرز أوفنباخ",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_vfbstuttgart",
+    "answer": "VfB Stuttgart",
+    "aliases": [
+      "شتوتغارت",
+      "شتوتجارت",
+      "شتوتغارد",
+      "VfB Stuttgart"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1893.",
+      "من ألواني المعروفة: الأبيض والأحمر.",
+      "أنا نادٍ من شتوتغارت، وأنتمي إلى كرة القدم في ألمانيا.",
+      "من الملاعب المرتبطة بتاريخي: نيكار شتاديون. ومن منافسيّ المعروفين: كارلسروه."
+    ],
+    "country": "ألمانيا",
+    "city": "شتوتغارت",
+    "founded": 1893,
+    "colors": "الأبيض والأحمر",
+    "historical_stadium": "نيكار شتاديون",
+    "rival": "كارلسروه",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_acmilan",
+    "answer": "AC Milan",
+    "aliases": [
+      "ميلان",
+      "اي سي ميلان",
+      "إيه سي ميلان",
+      "اسي ميلان",
+      "AC Milan"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1899.",
+      "من ألواني المعروفة: الأحمر والأسود.",
+      "أنا نادٍ من ميلانو، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: سان سيرو. ومن منافسيّ المعروفين: إنتر ميلان."
+    ],
+    "country": "إيطاليا",
+    "city": "ميلانو",
+    "founded": 1899,
+    "colors": "الأحمر والأسود",
+    "historical_stadium": "سان سيرو",
+    "rival": "إنتر ميلان",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_intermilan",
+    "answer": "Inter Milan",
+    "aliases": [
+      "إنتر ميلان",
+      "انتر ميلان",
+      "الانتر",
+      "إنتر",
+      "انتر",
+      "Inter Milan"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1908.",
+      "من ألواني المعروفة: الأزرق والأسود.",
+      "أنا نادٍ من ميلانو، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: جوزيبي مياتزا. ومن منافسيّ المعروفين: ميلان."
+    ],
+    "country": "إيطاليا",
+    "city": "ميلانو",
+    "founded": 1908,
+    "colors": "الأزرق والأسود",
+    "historical_stadium": "جوزيبي مياتزا",
+    "rival": "ميلان",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "خسرت نهائي دوري الأبطال ٢٠٢٥ في ميونخ بخمسة أهداف دون رد.",
+        "difficulty": 1,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/0299-1de417608530-15b01ff7b150-1000--paris-win-champions-league-doue-double-helps-secure-reco/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_juventus",
+    "answer": "Juventus",
+    "aliases": [
+      "يوفنتوس",
+      "جوفنتوس",
+      "اليوفي",
+      "يوفي",
+      "يوڤنتوس",
+      "Juventus"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1897.",
+      "من ألواني المعروفة: الأسود والأبيض.",
+      "أنا نادٍ من تورينو، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: أليانز ستاديوم. ومن منافسيّ المعروفين: تورينو."
+    ],
+    "country": "إيطاليا",
+    "city": "تورينو",
+    "founded": 1897,
+    "colors": "الأسود والأبيض",
+    "historical_stadium": "أليانز ستاديوم",
+    "rival": "تورينو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_napoli",
+    "answer": "Napoli",
+    "aliases": [
+      "نابولي",
+      "Napoli"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1926.",
+      "من ألواني المعروفة: الأزرق السماوي.",
+      "أنا نادٍ من نابولي، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: دييغو أرماندو مارادونا. ومن منافسيّ المعروفين: روما."
+    ],
+    "country": "إيطاليا",
+    "city": "نابولي",
+    "founded": 1926,
+    "colors": "الأزرق السماوي",
+    "historical_stadium": "دييغو أرماندو مارادونا",
+    "rival": "روما",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "انضم لي كيفن دي بروين سنة ٢٠٢٥ بعد عشر سنوات في مانشستر سيتي.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://sscnapoli.it/en/sscn-ufficiale-lingaggio-di-de-bruyne/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_roma",
+    "answer": "Roma",
+    "aliases": [
+      "روما",
+      "اي اس روما",
+      "Roma"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1927.",
+      "من ألواني المعروفة: العنابي والأصفر.",
+      "أنا نادٍ من روما، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: الأولمبيكو. ومن منافسيّ المعروفين: لاتسيو."
+    ],
+    "country": "إيطاليا",
+    "city": "روما",
+    "founded": 1927,
+    "colors": "العنابي والأصفر",
+    "historical_stadium": "الأولمبيكو",
+    "rival": "لاتسيو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_lazio",
+    "answer": "Lazio",
+    "aliases": [
+      "لاتسيو",
+      "لاتزيو",
+      "Lazio"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1900.",
+      "من ألواني المعروفة: الأزرق السماوي والأبيض.",
+      "أنا نادٍ من روما، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: الأولمبيكو. ومن منافسيّ المعروفين: روما."
+    ],
+    "country": "إيطاليا",
+    "city": "روما",
+    "founded": 1900,
+    "colors": "الأزرق السماوي والأبيض",
+    "historical_stadium": "الأولمبيكو",
+    "rival": "روما",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_atalanta",
+    "answer": "Atalanta",
+    "aliases": [
+      "أتالانتا",
+      "اتالانتا",
+      "اتلانتا",
+      "Atalanta"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1907.",
+      "من ألواني المعروفة: الأزرق والأسود.",
+      "أنا نادٍ من بيرغامو، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: أتليتي أزوري ديتاليا. ومن منافسيّ المعروفين: بريشيا."
+    ],
+    "country": "إيطاليا",
+    "city": "بيرغامو",
+    "founded": 1907,
+    "colors": "الأزرق والأسود",
+    "historical_stadium": "أتليتي أزوري ديتاليا",
+    "rival": "بريشيا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_fiorentina",
+    "answer": "Fiorentina",
+    "aliases": [
+      "فيورنتينا",
+      "فيورينتينا",
+      "فيورنتينة",
+      "Fiorentina"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1926.",
+      "من ألواني المعروفة: البنفسجي.",
+      "أنا نادٍ من فلورنسا، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: أرتيميو فرانكي. ومن منافسيّ المعروفين: يوفنتوس."
+    ],
+    "country": "إيطاليا",
+    "city": "فلورنسا",
+    "founded": 1926,
+    "colors": "البنفسجي",
+    "historical_stadium": "أرتيميو فرانكي",
+    "rival": "يوفنتوس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_torino",
+    "answer": "Torino",
+    "aliases": [
+      "تورينو",
+      "Torino"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1906.",
+      "من ألواني المعروفة: العنابي.",
+      "أنا نادٍ من تورينو، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: أولمبيكو غراندي تورينو. ومن منافسيّ المعروفين: يوفنتوس."
+    ],
+    "country": "إيطاليا",
+    "city": "تورينو",
+    "founded": 1906,
+    "colors": "العنابي",
+    "historical_stadium": "أولمبيكو غراندي تورينو",
+    "rival": "يوفنتوس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_sampdoria",
+    "answer": "Sampdoria",
+    "aliases": [
+      "سامبدوريا",
+      "سامبدوریا",
+      "Sampdoria"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1946.",
+      "من ألواني المعروفة: الأزرق مع الأبيض والأحمر والأسود.",
+      "أنا نادٍ من جنوة، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: لويجي فيراريس. ومن منافسيّ المعروفين: جنوى."
+    ],
+    "country": "إيطاليا",
+    "city": "جنوة",
+    "founded": 1946,
+    "colors": "الأزرق مع الأبيض والأحمر والأسود",
+    "historical_stadium": "لويجي فيراريس",
+    "rival": "جنوى",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_genoa",
+    "answer": "Genoa",
+    "aliases": [
+      "جنوى",
+      "جنوا",
+      "جينوا",
+      "Genoa"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1893.",
+      "من ألواني المعروفة: الأحمر والأزرق.",
+      "أنا نادٍ من جنوة، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: لويجي فيراريس. ومن منافسيّ المعروفين: سامبدوريا."
+    ],
+    "country": "إيطاليا",
+    "city": "جنوة",
+    "founded": 1893,
+    "colors": "الأحمر والأزرق",
+    "historical_stadium": "لويجي فيراريس",
+    "rival": "سامبدوريا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_parma",
+    "answer": "Parma",
+    "aliases": [
+      "بارما",
+      "Parma"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1913.",
+      "من ألواني المعروفة: الأصفر والأزرق.",
+      "أنا نادٍ من بارما، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: إينيو تارديني. ومن منافسيّ المعروفين: ريجيانا."
+    ],
+    "country": "إيطاليا",
+    "city": "بارما",
+    "founded": 1913,
+    "colors": "الأصفر والأزرق",
+    "historical_stadium": "إينيو تارديني",
+    "rival": "ريجيانا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_udinese",
+    "answer": "Udinese",
+    "aliases": [
+      "أودينيزي",
+      "اودينيزي",
+      "اودينيزى",
+      "Udinese"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1896.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من أوديني، وأنتمي إلى كرة القدم في إيطاليا.",
+      "من الملاعب المرتبطة بتاريخي: فريولي. ومن منافسيّ المعروفين: تريستينا."
+    ],
+    "country": "إيطاليا",
+    "city": "أوديني",
+    "founded": 1896,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "فريولي",
+    "rival": "تريستينا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_parissaintgermain",
+    "answer": "Paris Saint-Germain",
+    "aliases": [
+      "باريس سان جيرمان",
+      "باريس سان جرمان",
+      "باريس",
+      "بي اس جي",
+      "باريس سانجيرمان",
+      "Paris Saint-Germain"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1970.",
+      "من ألواني المعروفة: الأزرق والأحمر.",
+      "أنا نادٍ من باريس، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: بارك دي برانس. ومن منافسيّ المعروفين: مرسيليا."
+    ],
+    "country": "فرنسا",
+    "city": "باريس",
+    "founded": 1970,
+    "colors": "الأزرق والأحمر",
+    "historical_stadium": "بارك دي برانس",
+    "rival": "مرسيليا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "حافظت على لقب دوري الأبطال سنة ٢٠٢٦ بعد النهائي في بودابست.",
+        "difficulty": 1,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/02a5-20901454177c-738c0ac757df-1000--champions-league-final-meet-the-teams/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "هزمت آرسنال بترجيح ٤–٣ بعد تعادل ١–١ بنهائي دوري الأبطال ٢٠٢٦.",
+        "difficulty": 3,
+        "event_year": 2026,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/02a5-20901454177c-738c0ac757df-1000--champions-league-final-meet-the-teams/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      },
+      {
+        "text": "حققت أول دوري أبطال في تاريخي سنة ٢٠٢٥ بفوز ٥–٠.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.uefa.com/uefachampionsleague/news/0299-1de417608530-15b01ff7b150-1000--paris-win-champions-league-doue-double-helps-secure-reco/",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_marseille",
+    "answer": "Marseille",
+    "aliases": [
+      "مارسيليا",
+      "مرسيليا",
+      "اولمبيك مرسيليا",
+      "مارسيليه",
+      "Marseille"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1899.",
+      "من ألواني المعروفة: الأبيض والأزرق السماوي.",
+      "أنا نادٍ من مرسيليا، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: فيلودروم. ومن منافسيّ المعروفين: باريس سان جيرمان."
+    ],
+    "country": "فرنسا",
+    "city": "مرسيليا",
+    "founded": 1899,
+    "colors": "الأبيض والأزرق السماوي",
+    "historical_stadium": "فيلودروم",
+    "rival": "باريس سان جيرمان",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_lyon",
+    "answer": "Lyon",
+    "aliases": [
+      "ليون",
+      "أولمبيك ليون",
+      "اولمبيك ليون",
+      "Lyon"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1950.",
+      "من ألواني المعروفة: الأبيض والأحمر والأزرق.",
+      "أنا نادٍ من ليون، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: جيرلان. ومن منافسيّ المعروفين: سانت إتيان."
+    ],
+    "country": "فرنسا",
+    "city": "ليون",
+    "founded": 1950,
+    "colors": "الأبيض والأحمر والأزرق",
+    "historical_stadium": "جيرلان",
+    "rival": "سانت إتيان",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_monaco",
+    "answer": "Monaco",
+    "aliases": [
+      "موناكو",
+      "اي اس موناكو",
+      "Monaco"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1924.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من موناكو، وأنتمي إلى كرة القدم في فرنسا/موناكو.",
+      "من الملاعب المرتبطة بتاريخي: لويس الثاني. ومن منافسيّ المعروفين: نيس."
+    ],
+    "country": "فرنسا/موناكو",
+    "city": "موناكو",
+    "founded": 1924,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "لويس الثاني",
+    "rival": "نيس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_lille",
+    "answer": "Lille",
+    "aliases": [
+      "ليل",
+      "ليل الفرنسي",
+      "Lille"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1944.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من ليل، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: بيير موروا. ومن منافسيّ المعروفين: لانس."
+    ],
+    "country": "فرنسا",
+    "city": "ليل",
+    "founded": 1944,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "بيير موروا",
+    "rival": "لانس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_rennes",
+    "answer": "Rennes",
+    "aliases": [
+      "رين",
+      "رين الفرنسي",
+      "Rennes"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1901.",
+      "من ألواني المعروفة: الأحمر والأسود.",
+      "أنا نادٍ من رين، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: روازون بارك. ومن منافسيّ المعروفين: نانت."
+    ],
+    "country": "فرنسا",
+    "city": "رين",
+    "founded": 1901,
+    "colors": "الأحمر والأسود",
+    "historical_stadium": "روازون بارك",
+    "rival": "نانت",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_nice",
+    "answer": "Nice",
+    "aliases": [
+      "نيس",
+      "نيس الفرنسي",
+      "Nice"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1904.",
+      "من ألواني المعروفة: الأحمر والأسود.",
+      "أنا نادٍ من نيس، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: أليانز ريفييرا. ومن منافسيّ المعروفين: موناكو."
+    ],
+    "country": "فرنسا",
+    "city": "نيس",
+    "founded": 1904,
+    "colors": "الأحمر والأسود",
+    "historical_stadium": "أليانز ريفييرا",
+    "rival": "موناكو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_saintetienne",
+    "answer": "Saint-Étienne",
+    "aliases": [
+      "سانت إيتيان",
+      "سانت اتيان",
+      "سانت إتيان",
+      "Saint-Étienne"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1919.",
+      "من ألواني المعروفة: الأخضر.",
+      "أنا نادٍ من سانت إتيان، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: جوفروي غيشار. ومن منافسيّ المعروفين: ليون."
+    ],
+    "country": "فرنسا",
+    "city": "سانت إتيان",
+    "founded": 1919,
+    "colors": "الأخضر",
+    "historical_stadium": "جوفروي غيشار",
+    "rival": "ليون",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_bordeaux",
+    "answer": "Bordeaux",
+    "aliases": [
+      "بوردو",
+      "جيروندان بوردو",
+      "Bordeaux"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1881.",
+      "من ألواني المعروفة: الكحلي والأبيض.",
+      "أنا نادٍ من بوردو، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: شابان ديلماس. ومن منافسيّ المعروفين: تولوز."
+    ],
+    "country": "فرنسا",
+    "city": "بوردو",
+    "founded": 1881,
+    "colors": "الكحلي والأبيض",
+    "historical_stadium": "شابان ديلماس",
+    "rival": "تولوز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_lens",
+    "answer": "Lens",
+    "aliases": [
+      "لانس",
+      "لنس",
+      "Lens"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1906.",
+      "من ألواني المعروفة: الأحمر والأصفر.",
+      "أنا نادٍ من لانس، وأنتمي إلى كرة القدم في فرنسا.",
+      "من الملاعب المرتبطة بتاريخي: بولار دولولي. ومن منافسيّ المعروفين: ليل."
+    ],
+    "country": "فرنسا",
+    "city": "لانس",
+    "founded": 1906,
+    "colors": "الأحمر والأصفر",
+    "historical_stadium": "بولار دولولي",
+    "rival": "ليل",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_ajax",
+    "answer": "Ajax",
+    "aliases": [
+      "أياكس",
+      "اياكس",
+      "اجاكس",
+      "أياكس أمستردام",
+      "Ajax"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1900.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من أمستردام، وأنتمي إلى كرة القدم في هولندا.",
+      "من الملاعب المرتبطة بتاريخي: يوهان كرويف أرينا. ومن منافسيّ المعروفين: فينورد."
+    ],
+    "country": "هولندا",
+    "city": "أمستردام",
+    "founded": 1900,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "يوهان كرويف أرينا",
+    "rival": "فينورد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_psveindhoven",
+    "answer": "PSV Eindhoven",
+    "aliases": [
+      "آيندهوفن",
+      "ايندهوفن",
+      "بي اس في",
+      "ايندهوڤن",
+      "PSV Eindhoven"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1913.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من آيندهوفن، وأنتمي إلى كرة القدم في هولندا.",
+      "من الملاعب المرتبطة بتاريخي: فيليبس. ومن منافسيّ المعروفين: أياكس."
+    ],
+    "country": "هولندا",
+    "city": "آيندهوفن",
+    "founded": 1913,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "فيليبس",
+    "rival": "أياكس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_feyenoord",
+    "answer": "Feyenoord",
+    "aliases": [
+      "فينورد",
+      "فينورد روتردام",
+      "فاينورد",
+      "Feyenoord"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1908.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من روتردام، وأنتمي إلى كرة القدم في هولندا.",
+      "من الملاعب المرتبطة بتاريخي: دي كويب. ومن منافسيّ المعروفين: أياكس."
+    ],
+    "country": "هولندا",
+    "city": "روتردام",
+    "founded": 1908,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "دي كويب",
+    "rival": "أياكس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_porto",
+    "answer": "Porto",
+    "aliases": [
+      "بورتو",
+      "اف سي بورتو",
+      "Porto"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1893.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من بورتو، وأنتمي إلى كرة القدم في البرتغال.",
+      "من الملاعب المرتبطة بتاريخي: دراغاو. ومن منافسيّ المعروفين: بنفيكا."
+    ],
+    "country": "البرتغال",
+    "city": "بورتو",
+    "founded": 1893,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "دراغاو",
+    "rival": "بنفيكا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_benfica",
+    "answer": "Benfica",
+    "aliases": [
+      "بنفيكا",
+      "بنفيقة",
+      "Benfica"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1904.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من لشبونة، وأنتمي إلى كرة القدم في البرتغال.",
+      "من الملاعب المرتبطة بتاريخي: دا لوز. ومن منافسيّ المعروفين: سبورتينغ لشبونة."
+    ],
+    "country": "البرتغال",
+    "city": "لشبونة",
+    "founded": 1904,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "دا لوز",
+    "rival": "سبورتينغ لشبونة",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_sportingcp",
+    "answer": "Sporting CP",
+    "aliases": [
+      "سبورتينغ لشبونة",
+      "سبورتينج لشبونة",
+      "سبورتنغ",
+      "سبورتينغ",
+      "Sporting CP"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1906.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من لشبونة، وأنتمي إلى كرة القدم في البرتغال.",
+      "من الملاعب المرتبطة بتاريخي: جوزيه ألفالادي. ومن منافسيّ المعروفين: بنفيكا."
+    ],
+    "country": "البرتغال",
+    "city": "لشبونة",
+    "founded": 1906,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "جوزيه ألفالادي",
+    "rival": "بنفيكا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_braga",
+    "answer": "Braga",
+    "aliases": [
+      "براغا",
+      "سبورتينغ براغا",
+      "براغه",
+      "Braga"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1921.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من براغا، وأنتمي إلى كرة القدم في البرتغال.",
+      "من الملاعب المرتبطة بتاريخي: ملعب براغا البلدي. ومن منافسيّ المعروفين: فيتوريا غيماريش."
+    ],
+    "country": "البرتغال",
+    "city": "براغا",
+    "founded": 1921,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "ملعب براغا البلدي",
+    "rival": "فيتوريا غيماريش",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_celtic",
+    "answer": "Celtic",
+    "aliases": [
+      "سيلتيك",
+      "سلتيك",
+      "سيلتك",
+      "Celtic"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1887.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من غلاسكو، وأنتمي إلى كرة القدم في اسكتلندا.",
+      "من الملاعب المرتبطة بتاريخي: سيلتيك بارك. ومن منافسيّ المعروفين: رينجرز."
+    ],
+    "country": "اسكتلندا",
+    "city": "غلاسكو",
+    "founded": 1887,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "سيلتيك بارك",
+    "rival": "رينجرز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_rangers",
+    "answer": "Rangers",
+    "aliases": [
+      "رينجرز",
+      "غلاسكو رينجرز",
+      "رينجرس",
+      "Rangers"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1872.",
+      "من ألواني المعروفة: الأزرق.",
+      "أنا نادٍ من غلاسكو، وأنتمي إلى كرة القدم في اسكتلندا.",
+      "من الملاعب المرتبطة بتاريخي: آيبروكس. ومن منافسيّ المعروفين: سيلتيك."
+    ],
+    "country": "اسكتلندا",
+    "city": "غلاسكو",
+    "founded": 1872,
+    "colors": "الأزرق",
+    "historical_stadium": "آيبروكس",
+    "rival": "سيلتيك",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_galatasaray",
+    "answer": "Galatasaray",
+    "aliases": [
+      "غلطة سراي",
+      "غلاطة سراي",
+      "غالاطا سراي",
+      "غالاتاسراي",
+      "Galatasaray"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1905.",
+      "من ألواني المعروفة: الأصفر والأحمر.",
+      "أنا نادٍ من إسطنبول، وأنتمي إلى كرة القدم في تركيا.",
+      "من الملاعب المرتبطة بتاريخي: علي سامي ين. ومن منافسيّ المعروفين: فنربخشة."
+    ],
+    "country": "تركيا",
+    "city": "إسطنبول",
+    "founded": 1905,
+    "colors": "الأصفر والأحمر",
+    "historical_stadium": "علي سامي ين",
+    "rival": "فنربخشة",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_fenerbahce",
+    "answer": "Fenerbahçe",
+    "aliases": [
+      "فنربخشة",
+      "فنربخشه",
+      "فنر بهتشه",
+      "فنربهتشه",
+      "Fenerbahçe"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1907.",
+      "من ألواني المعروفة: الأصفر والكحلي.",
+      "أنا نادٍ من إسطنبول، وأنتمي إلى كرة القدم في تركيا.",
+      "من الملاعب المرتبطة بتاريخي: شكري سراج أوغلو. ومن منافسيّ المعروفين: غلطة سراي."
+    ],
+    "country": "تركيا",
+    "city": "إسطنبول",
+    "founded": 1907,
+    "colors": "الأصفر والكحلي",
+    "historical_stadium": "شكري سراج أوغلو",
+    "rival": "غلطة سراي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "تعاقدت مع الحارس البرازيلي إيدرسون من مانشستر سيتي سنة ٢٠٢٥.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.mancity.com/news/mens/ederson-leaves-manchester-city-fenerbahce-transfer-63892390",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_besiktas",
+    "answer": "Beşiktaş",
+    "aliases": [
+      "بشكتاش",
+      "بيشكتاش",
+      "بشيكتاش",
+      "Beşiktaş"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1903.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من إسطنبول، وأنتمي إلى كرة القدم في تركيا.",
+      "من الملاعب المرتبطة بتاريخي: إينونو. ومن منافسيّ المعروفين: فنربخشة."
+    ],
+    "country": "تركيا",
+    "city": "إسطنبول",
+    "founded": 1903,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "إينونو",
+    "rival": "فنربخشة",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_trabzonspor",
+    "answer": "Trabzonspor",
+    "aliases": [
+      "طرابزون سبور",
+      "طرابزون",
+      "ترابزون سبور",
+      "Trabzonspor"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1967.",
+      "من ألواني المعروفة: العنابي والأزرق.",
+      "أنا نادٍ من طرابزون، وأنتمي إلى كرة القدم في تركيا.",
+      "من الملاعب المرتبطة بتاريخي: حسين عوني أكر. ومن منافسيّ المعروفين: فنربخشة."
+    ],
+    "country": "تركيا",
+    "city": "طرابزون",
+    "founded": 1967,
+    "colors": "العنابي والأزرق",
+    "historical_stadium": "حسين عوني أكر",
+    "rival": "فنربخشة",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_olympiacos",
+    "answer": "Olympiacos",
+    "aliases": [
+      "أولمبياكوس",
+      "اولمبياكوس",
+      "أولمبياكوس بيرايوس",
+      "Olympiacos"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1925.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من بيرايوس، وأنتمي إلى كرة القدم في اليونان.",
+      "من الملاعب المرتبطة بتاريخي: كارايسكاكيس. ومن منافسيّ المعروفين: باناثينايكوس."
+    ],
+    "country": "اليونان",
+    "city": "بيرايوس",
+    "founded": 1925,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "كارايسكاكيس",
+    "rival": "باناثينايكوس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_panathinaikos",
+    "answer": "Panathinaikos",
+    "aliases": [
+      "باناثينايكوس",
+      "باناثينايكوس أثينا",
+      "Panathinaikos"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1908.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من أثينا، وأنتمي إلى كرة القدم في اليونان.",
+      "من الملاعب المرتبطة بتاريخي: أبوستولوس نيكولايديس. ومن منافسيّ المعروفين: أولمبياكوس."
+    ],
+    "country": "اليونان",
+    "city": "أثينا",
+    "founded": 1908,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "أبوستولوس نيكولايديس",
+    "rival": "أولمبياكوس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_shakhtardonetsk",
+    "answer": "Shakhtar Donetsk",
+    "aliases": [
+      "شاختار دونيتسك",
+      "شاختار",
+      "شاختار دونيتسك الأوكراني",
+      "Shakhtar Donetsk"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1936.",
+      "من ألواني المعروفة: البرتقالي والأسود.",
+      "أنا نادٍ من دونيتسك، وأنتمي إلى كرة القدم في أوكرانيا.",
+      "من الملاعب المرتبطة بتاريخي: دونباس أرينا. ومن منافسيّ المعروفين: دينامو كييف."
+    ],
+    "country": "أوكرانيا",
+    "city": "دونيتسك",
+    "founded": 1936,
+    "colors": "البرتقالي والأسود",
+    "historical_stadium": "دونباس أرينا",
+    "rival": "دينامو كييف",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_dynamokyiv",
+    "answer": "Dynamo Kyiv",
+    "aliases": [
+      "دينامو كييف",
+      "دينامو كييف الأوكراني",
+      "Dynamo Kyiv"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1927.",
+      "من ألواني المعروفة: الأبيض والأزرق.",
+      "أنا نادٍ من كييف، وأنتمي إلى كرة القدم في أوكرانيا.",
+      "من الملاعب المرتبطة بتاريخي: ملعب أولمبيسكي الوطني. ومن منافسيّ المعروفين: شاختار دونيتسك."
+    ],
+    "country": "أوكرانيا",
+    "city": "كييف",
+    "founded": 1927,
+    "colors": "الأبيض والأزرق",
+    "historical_stadium": "ملعب أولمبيسكي الوطني",
+    "rival": "شاختار دونيتسك",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_zenitsaintpetersburg",
+    "answer": "Zenit Saint Petersburg",
+    "aliases": [
+      "زينيت",
+      "زينيت سان بطرسبورغ",
+      "زينيت بطرسبورغ",
+      "Zenit Saint Petersburg"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1925.",
+      "من ألواني المعروفة: الأزرق السماوي.",
+      "أنا نادٍ من سان بطرسبورغ، وأنتمي إلى كرة القدم في روسيا.",
+      "من الملاعب المرتبطة بتاريخي: بيتروفسكي. ومن منافسيّ المعروفين: سبارتاك موسكو."
+    ],
+    "country": "روسيا",
+    "city": "سان بطرسبورغ",
+    "founded": 1925,
+    "colors": "الأزرق السماوي",
+    "historical_stadium": "بيتروفسكي",
+    "rival": "سبارتاك موسكو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_cskamoscow",
+    "answer": "CSKA Moscow",
+    "aliases": [
+      "سيسكا موسكو",
+      "سسكا موسكو",
+      "سيسكا",
+      "CSKA Moscow"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1911.",
+      "من ألواني المعروفة: الأحمر والأزرق.",
+      "أنا نادٍ من موسكو، وأنتمي إلى كرة القدم في روسيا.",
+      "من الملاعب المرتبطة بتاريخي: في إي بي أرينا. ومن منافسيّ المعروفين: سبارتاك موسكو."
+    ],
+    "country": "روسيا",
+    "city": "موسكو",
+    "founded": 1911,
+    "colors": "الأحمر والأزرق",
+    "historical_stadium": "في إي بي أرينا",
+    "rival": "سبارتاك موسكو",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_redbullsalzburg",
+    "answer": "Red Bull Salzburg",
+    "aliases": [
+      "ريد بول سالزبورغ",
+      "سالزبورغ",
+      "سالزبورج",
+      "Red Bull Salzburg"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1933.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من سالزبورغ، وأنتمي إلى كرة القدم في النمسا.",
+      "من الملاعب المرتبطة بتاريخي: ريد بول أرينا. ومن منافسيّ المعروفين: رابيد فيينا."
+    ],
+    "country": "النمسا",
+    "city": "سالزبورغ",
+    "founded": 1933,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "ريد بول أرينا",
+    "rival": "رابيد فيينا",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_anderlecht",
+    "answer": "Anderlecht",
+    "aliases": [
+      "أندرلخت",
+      "اندرلخت",
+      "اندرليخت",
+      "Anderlecht"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1908.",
+      "من ألواني المعروفة: البنفسجي والأبيض.",
+      "أنا نادٍ من بروكسل، وأنتمي إلى كرة القدم في بلجيكا.",
+      "من الملاعب المرتبطة بتاريخي: كونستانت فاندن ستوك. ومن منافسيّ المعروفين: كلوب بروج."
+    ],
+    "country": "بلجيكا",
+    "city": "بروكسل",
+    "founded": 1908,
+    "colors": "البنفسجي والأبيض",
+    "historical_stadium": "كونستانت فاندن ستوك",
+    "rival": "كلوب بروج",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_clubbrugge",
+    "answer": "Club Brugge",
+    "aliases": [
+      "كلوب بروج",
+      "كلوب بروغ",
+      "بروج",
+      "Club Brugge"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1891.",
+      "من ألواني المعروفة: الأزرق والأسود.",
+      "أنا نادٍ من بروج، وأنتمي إلى كرة القدم في بلجيكا.",
+      "من الملاعب المرتبطة بتاريخي: يان بريدل. ومن منافسيّ المعروفين: أندرلخت."
+    ],
+    "country": "بلجيكا",
+    "city": "بروج",
+    "founded": 1891,
+    "colors": "الأزرق والأسود",
+    "historical_stadium": "يان بريدل",
+    "rival": "أندرلخت",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_bocajuniors",
+    "answer": "Boca Juniors",
+    "aliases": [
+      "بوكا جونيورز",
+      "بوكا",
+      "بوكا جونيور",
+      "Boca Juniors"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1905.",
+      "من ألواني المعروفة: الأزرق والأصفر.",
+      "أنا نادٍ من بوينس آيرس، وأنتمي إلى كرة القدم في الأرجنتين.",
+      "من الملاعب المرتبطة بتاريخي: لا بومبونيرا. ومن منافسيّ المعروفين: ريفر بليت."
+    ],
+    "country": "الأرجنتين",
+    "city": "بوينس آيرس",
+    "founded": 1905,
+    "colors": "الأزرق والأصفر",
+    "historical_stadium": "لا بومبونيرا",
+    "rival": "ريفر بليت",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_riverplate",
+    "answer": "River Plate",
+    "aliases": [
+      "ريفر بليت",
+      "ريفر بلايت",
+      "ريفر",
+      "ريڤر بليت",
+      "River Plate"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1901.",
+      "من ألواني المعروفة: الأبيض مع شريط أحمر.",
+      "أنا نادٍ من بوينس آيرس، وأنتمي إلى كرة القدم في الأرجنتين.",
+      "من الملاعب المرتبطة بتاريخي: المونومنتال. ومن منافسيّ المعروفين: بوكا جونيورز."
+    ],
+    "country": "الأرجنتين",
+    "city": "بوينس آيرس",
+    "founded": 1901,
+    "colors": "الأبيض مع شريط أحمر",
+    "historical_stadium": "المونومنتال",
+    "rival": "بوكا جونيورز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_flamengo",
+    "answer": "Flamengo",
+    "aliases": [
+      "فلامنغو",
+      "فلامنجو",
+      "فلامينغو",
+      "Flamengo"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1895.",
+      "من ألواني المعروفة: الأحمر والأسود.",
+      "أنا نادٍ من ريو دي جانيرو، وأنتمي إلى كرة القدم في البرازيل.",
+      "من الملاعب المرتبطة بتاريخي: ماراكانا. ومن منافسيّ المعروفين: فلومينينسي."
+    ],
+    "country": "البرازيل",
+    "city": "ريو دي جانيرو",
+    "founded": 1895,
+    "colors": "الأحمر والأسود",
+    "historical_stadium": "ماراكانا",
+    "rival": "فلومينينسي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_palmeiras",
+    "answer": "Palmeiras",
+    "aliases": [
+      "بالميراس",
+      "بالميرس",
+      "Palmeiras"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1914.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من ساو باولو، وأنتمي إلى كرة القدم في البرازيل.",
+      "من الملاعب المرتبطة بتاريخي: أليانز باركي. ومن منافسيّ المعروفين: كورينثيانز."
+    ],
+    "country": "البرازيل",
+    "city": "ساو باولو",
+    "founded": 1914,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "أليانز باركي",
+    "rival": "كورينثيانز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_santos",
+    "answer": "Santos",
+    "aliases": [
+      "سانتوس",
+      "سانتوس البرازيلي",
+      "Santos"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1912.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من سانتوس، وأنتمي إلى كرة القدم في البرازيل.",
+      "من الملاعب المرتبطة بتاريخي: فيلا بيلميرو. ومن منافسيّ المعروفين: كورينثيانز."
+    ],
+    "country": "البرازيل",
+    "city": "سانتوس",
+    "founded": 1912,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "فيلا بيلميرو",
+    "rival": "كورينثيانز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_corinthians",
+    "answer": "Corinthians",
+    "aliases": [
+      "كورينثيانز",
+      "كورينثيانس",
+      "كورينتيانز",
+      "Corinthians"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1910.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من ساو باولو، وأنتمي إلى كرة القدم في البرازيل.",
+      "من الملاعب المرتبطة بتاريخي: أرينا كورينثيانز. ومن منافسيّ المعروفين: بالميراس."
+    ],
+    "country": "البرازيل",
+    "city": "ساو باولو",
+    "founded": 1910,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "أرينا كورينثيانز",
+    "rival": "بالميراس",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_saopaulo",
+    "answer": "São Paulo",
+    "aliases": [
+      "ساو باولو",
+      "ساو باولو البرازيلي",
+      "ساوباولو",
+      "São Paulo"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1930.",
+      "من ألواني المعروفة: الأبيض والأحمر والأسود.",
+      "أنا نادٍ من ساو باولو، وأنتمي إلى كرة القدم في البرازيل.",
+      "من الملاعب المرتبطة بتاريخي: مورومبي. ومن منافسيّ المعروفين: كورينثيانز."
+    ],
+    "country": "البرازيل",
+    "city": "ساو باولو",
+    "founded": 1930,
+    "colors": "الأبيض والأحمر والأسود",
+    "historical_stadium": "مورومبي",
+    "rival": "كورينثيانز",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alhilal",
+    "answer": "Al Hilal",
+    "aliases": [
+      "الهلال",
+      "الهلال السعودي",
+      "هلال",
+      "Al Hilal"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1957.",
+      "من ألواني المعروفة: الأزرق والأبيض.",
+      "أنا نادٍ من الرياض، وأنتمي إلى كرة القدم في السعودية.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الملك فهد الدولي. ومن منافسيّ المعروفين: النصر."
+    ],
+    "country": "السعودية",
+    "city": "الرياض",
+    "founded": 1957,
+    "colors": "الأزرق والأبيض",
+    "historical_stadium": "ملعب الملك فهد الدولي",
+    "rival": "النصر",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alnassr",
+    "answer": "Al Nassr",
+    "aliases": [
+      "النصر",
+      "النصر السعودي",
+      "نصر",
+      "Al Nassr"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1955.",
+      "من ألواني المعروفة: الأصفر والأزرق.",
+      "أنا نادٍ من الرياض، وأنتمي إلى كرة القدم في السعودية.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الملك فهد الدولي. ومن منافسيّ المعروفين: الهلال."
+    ],
+    "country": "السعودية",
+    "city": "الرياض",
+    "founded": 1955,
+    "colors": "الأصفر والأزرق",
+    "historical_stadium": "ملعب الملك فهد الدولي",
+    "rival": "الهلال",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": [
+      {
+        "text": "ضممت جواو فيليكس من تشيلسي بعقد دائم في يوليو ٢٠٢٥.",
+        "difficulty": 2,
+        "event_year": 2025,
+        "kind": "event",
+        "source_url": "https://www.chelseafc.com/en/news/article/joao-felix-completes-al-nassr-move",
+        "checked_on": "2026-10-01",
+        "supplement": "verified_2026_v2"
+      }
+    ]
+  },
+  {
+    "id": "club_alittihad",
+    "answer": "Al Ittihad",
+    "aliases": [
+      "الاتحاد السعودي",
+      "اتحاد جدة",
+      "الاتحاد",
+      "اتحاد",
+      "Al Ittihad"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1927.",
+      "من ألواني المعروفة: الأصفر والأسود.",
+      "أنا نادٍ من جدة، وأنتمي إلى كرة القدم في السعودية.",
+      "من الملاعب المرتبطة بتاريخي: مدينة الملك عبد الله الرياضية. ومن منافسيّ المعروفين: الأهلي السعودي."
+    ],
+    "country": "السعودية",
+    "city": "جدة",
+    "founded": 1927,
+    "colors": "الأصفر والأسود",
+    "historical_stadium": "مدينة الملك عبد الله الرياضية",
+    "rival": "الأهلي السعودي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alahlisaudi",
+    "answer": "Al Ahli Saudi",
+    "aliases": [
+      "الأهلي السعودي",
+      "الاهلي السعودي",
+      "اهلي جدة",
+      "أهلي جدة",
+      "Al Ahli Saudi"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1937.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من جدة، وأنتمي إلى كرة القدم في السعودية.",
+      "من الملاعب المرتبطة بتاريخي: مدينة الملك عبد الله الرياضية. ومن منافسيّ المعروفين: الاتحاد السعودي."
+    ],
+    "country": "السعودية",
+    "city": "جدة",
+    "founded": 1937,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "مدينة الملك عبد الله الرياضية",
+    "rival": "الاتحاد السعودي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alahly",
+    "answer": "Al Ahly",
+    "aliases": [
+      "الأهلي المصري",
+      "الاهلي المصري",
+      "الاهلي",
+      "الأهلي",
+      "Al Ahly"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1907.",
+      "من ألواني المعروفة: الأحمر.",
+      "أنا نادٍ من القاهرة، وأنتمي إلى كرة القدم في مصر.",
+      "من الملاعب المرتبطة بتاريخي: ملعب القاهرة الدولي. ومن منافسيّ المعروفين: الزمالك."
+    ],
+    "country": "مصر",
+    "city": "القاهرة",
+    "founded": 1907,
+    "colors": "الأحمر",
+    "historical_stadium": "ملعب القاهرة الدولي",
+    "rival": "الزمالك",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_zamalek",
+    "answer": "Zamalek",
+    "aliases": [
+      "الزمالك",
+      "زمالك",
+      "Zamalek"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1911.",
+      "من ألواني المعروفة: الأبيض مع خطين أحمرين.",
+      "أنا نادٍ من الجيزة، وأنتمي إلى كرة القدم في مصر.",
+      "من الملاعب المرتبطة بتاريخي: ملعب القاهرة الدولي. ومن منافسيّ المعروفين: الأهلي المصري."
+    ],
+    "country": "مصر",
+    "city": "الجيزة",
+    "founded": 1911,
+    "colors": "الأبيض مع خطين أحمرين",
+    "historical_stadium": "ملعب القاهرة الدولي",
+    "rival": "الأهلي المصري",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_rajacasablanca",
+    "answer": "Raja Casablanca",
+    "aliases": [
+      "الرجاء",
+      "الرجاء البيضاوي",
+      "رجاء",
+      "Raja Casablanca"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1949.",
+      "من ألواني المعروفة: الأخضر والأبيض.",
+      "أنا نادٍ من الدار البيضاء، وأنتمي إلى كرة القدم في المغرب.",
+      "من الملاعب المرتبطة بتاريخي: محمد الخامس. ومن منافسيّ المعروفين: الوداد."
+    ],
+    "country": "المغرب",
+    "city": "الدار البيضاء",
+    "founded": 1949,
+    "colors": "الأخضر والأبيض",
+    "historical_stadium": "محمد الخامس",
+    "rival": "الوداد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_wydadcasablanca",
+    "answer": "Wydad Casablanca",
+    "aliases": [
+      "الوداد",
+      "الوداد البيضاوي",
+      "وداد",
+      "Wydad Casablanca"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1937.",
+      "من ألواني المعروفة: الأحمر والأبيض.",
+      "أنا نادٍ من الدار البيضاء، وأنتمي إلى كرة القدم في المغرب.",
+      "من الملاعب المرتبطة بتاريخي: محمد الخامس. ومن منافسيّ المعروفين: الرجاء."
+    ],
+    "country": "المغرب",
+    "city": "الدار البيضاء",
+    "founded": 1937,
+    "colors": "الأحمر والأبيض",
+    "historical_stadium": "محمد الخامس",
+    "rival": "الرجاء",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_esperancetunis",
+    "answer": "Espérance Tunis",
+    "aliases": [
+      "الترجي",
+      "الترجي التونسي",
+      "ترجي",
+      "Espérance Tunis"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1919.",
+      "من ألواني المعروفة: الأحمر والأصفر.",
+      "أنا نادٍ من تونس، وأنتمي إلى كرة القدم في تونس.",
+      "من الملاعب المرتبطة بتاريخي: الملعب الأولمبي برادس. ومن منافسيّ المعروفين: النادي الأفريقي."
+    ],
+    "country": "تونس",
+    "city": "تونس",
+    "founded": 1919,
+    "colors": "الأحمر والأصفر",
+    "historical_stadium": "الملعب الأولمبي برادس",
+    "rival": "النادي الأفريقي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alsadd",
+    "answer": "Al Sadd",
+    "aliases": [
+      "السد",
+      "السد القطري",
+      "سد",
+      "Al Sadd"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1969.",
+      "من ألواني المعروفة: الأبيض والأسود.",
+      "أنا نادٍ من الدوحة، وأنتمي إلى كرة القدم في قطر.",
+      "من الملاعب المرتبطة بتاريخي: جاسم بن حمد. ومن منافسيّ المعروفين: العربي القطري."
+    ],
+    "country": "قطر",
+    "city": "الدوحة",
+    "founded": 1969,
+    "colors": "الأبيض والأسود",
+    "historical_stadium": "جاسم بن حمد",
+    "rival": "العربي القطري",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alduhail",
+    "answer": "Al Duhail",
+    "aliases": [
+      "الدحيل",
+      "الدحيل القطري",
+      "لخويا",
+      "Al Duhail"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 2009.",
+      "من ألواني المعروفة: الأحمر.",
+      "أنا نادٍ من الدوحة، وأنتمي إلى كرة القدم في قطر.",
+      "من الملاعب المرتبطة بتاريخي: عبد الله بن خليفة. ومن منافسيّ المعروفين: السد."
+    ],
+    "country": "قطر",
+    "city": "الدوحة",
+    "founded": 2009,
+    "colors": "الأحمر",
+    "historical_stadium": "عبد الله بن خليفة",
+    "rival": "السد",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alain",
+    "answer": "Al Ain",
+    "aliases": [
+      "العين",
+      "العين الاماراتي",
+      "العين الإماراتي",
+      "Al Ain"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1968.",
+      "من ألواني المعروفة: البنفسجي والأبيض.",
+      "أنا نادٍ من العين، وأنتمي إلى كرة القدم في الإمارات.",
+      "من الملاعب المرتبطة بتاريخي: هزاع بن زايد. ومن منافسيّ المعروفين: الوحدة الإماراتي."
+    ],
+    "country": "الإمارات",
+    "city": "العين",
+    "founded": 1968,
+    "colors": "البنفسجي والأبيض",
+    "historical_stadium": "هزاع بن زايد",
+    "rival": "الوحدة الإماراتي",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alshorta",
+    "answer": "Al Shorta",
+    "aliases": [
+      "الشرطة",
+      "الشرطه",
+      "الشرطة العراقي",
+      "Al Shorta"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1932.",
+      "من ألواني المعروفة: الأخضر.",
+      "أنا نادٍ من بغداد، وأنتمي إلى كرة القدم في العراق.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الشعب الدولي. ومن منافسيّ المعروفين: القوة الجوية."
+    ],
+    "country": "العراق",
+    "city": "بغداد",
+    "founded": 1932,
+    "colors": "الأخضر",
+    "historical_stadium": "ملعب الشعب الدولي",
+    "rival": "القوة الجوية",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alquwaaljawiya",
+    "answer": "Al Quwa Al Jawiya",
+    "aliases": [
+      "القوة الجوية",
+      "القوه الجويه",
+      "الجوية",
+      "الجويه",
+      "Al Quwa Al Jawiya"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1931.",
+      "من ألواني المعروفة: الأزرق.",
+      "أنا نادٍ من بغداد، وأنتمي إلى كرة القدم في العراق.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الشعب الدولي. ومن منافسيّ المعروفين: الزوراء."
+    ],
+    "country": "العراق",
+    "city": "بغداد",
+    "founded": 1931,
+    "colors": "الأزرق",
+    "historical_stadium": "ملعب الشعب الدولي",
+    "rival": "الزوراء",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_alzawraa",
+    "answer": "Al Zawraa",
+    "aliases": [
+      "الزوراء",
+      "زوراء",
+      "Al Zawraa"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1969.",
+      "من ألواني المعروفة: الأبيض.",
+      "أنا نادٍ من بغداد، وأنتمي إلى كرة القدم في العراق.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الشعب الدولي. ومن منافسيّ المعروفين: القوة الجوية."
+    ],
+    "country": "العراق",
+    "city": "بغداد",
+    "founded": 1969,
+    "colors": "الأبيض",
+    "historical_stadium": "ملعب الشعب الدولي",
+    "rival": "القوة الجوية",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  },
+  {
+    "id": "club_altalaba",
+    "answer": "Al Talaba",
+    "aliases": [
+      "الطلبة",
+      "الطلبه",
+      "طلبة",
+      "طلبه",
+      "Al Talaba"
+    ],
+    "clues": [
+      "ترجع جذور تأسيسي إلى سنة 1969.",
+      "من ألواني المعروفة: الأزرق.",
+      "أنا نادٍ من بغداد، وأنتمي إلى كرة القدم في العراق.",
+      "من الملاعب المرتبطة بتاريخي: ملعب الشعب الدولي. ومن منافسيّ المعروفين: الزوراء."
+    ],
+    "country": "العراق",
+    "city": "بغداد",
+    "founded": 1969,
+    "colors": "الأزرق",
+    "historical_stadium": "ملعب الشعب الدولي",
+    "rival": "الزوراء",
+    "source": "Authored historical club facts; see SOURCES.md",
+    "extra_clues": []
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "players": 700,
+  "clubs": 110,
+  "player_clues": 2800,
+  "club_clues": 440,
+  "authored_career_players": 76,
+  "biography_players": 624,
+  "players_with_arabic_alias": 700,
+  "scope": "Original historical bank plus selectively verified 2024–2026 events; original 2021 club clues remain dated.",
+  "sha256": {
+    "players.json": "75f6033ca753698247f89eb13df1807b9bbdd7b63b026e7a9d1877d985fe1425",
+    "clubs.json": "abafbe309529e8c52fd8cdcd479b2421559bac726a64c5942874ab22cdf06924"
+  },
+  "version": "2.0",
+  "checked_through": "2026-10-01",
+  "topics_supported": true,
+  "modern_clues": 121,
+  "modern_by_year": {
+    "2026": 56,
+    "2025": 42,
+    "2024": 23
+  },
+  "players_with_modern_clues": 64,
+  "clubs_with_modern_clues": 16
+}
