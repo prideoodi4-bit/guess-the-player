@@ -1,0 +1,27 @@
+test_aliases_and_typo_safety (test_game.BankTests.test_aliases_and_typo_safety) ... ok
+test_blueprint_crosswalk_resolves_all_references (test_game.BankTests.test_blueprint_crosswalk_resolves_all_references) ... ok
+test_every_alias_is_accepted (test_game.BankTests.test_every_alias_is_accepted) ... ok
+test_every_case_has_four_clues_in_all_levels (test_game.BankTests.test_every_case_has_four_clues_in_all_levels) ... ok
+test_general_topic_normalization (test_game.BankTests.test_general_topic_normalization) ... ok
+test_unseen_first_no_duplicates (test_game.BankTests.test_unseen_first_no_duplicates) ... ok
+test_admin_can_stop (test_game.GameTests.test_admin_can_stop) ... ok
+test_backup_keeps_scores_and_sessions (test_game.GameTests.test_backup_keeps_scores_and_sessions) ... ok
+test_custom_clue_seconds_controls_all_four_windows (test_game.GameTests.test_custom_clue_seconds_controls_all_four_windows) ... ok
+test_four_clues_exact_timing_and_final_window (test_game.GameTests.test_four_clues_exact_timing_and_final_window) ... ok
+test_host_menu_and_stale_callbacks (test_game.GameTests.test_host_menu_and_stale_callbacks) ... ok
+test_late_and_queued_old_answers_rejected (test_game.GameTests.test_late_and_queued_old_answers_rejected) ... ok
+test_non_host_cannot_stop (test_game.GameTests.test_non_host_cannot_stop) ... ok
+test_real_payload_topic_and_general (test_game.GameTests.test_real_payload_topic_and_general) ... ok
+test_recovery_and_persistent_history (test_game.GameTests.test_recovery_and_persistent_history) ... ok
+test_settings_buttons_apply_next_clue_and_persist (test_game.GameTests.test_settings_buttons_apply_next_clue_and_persist) ... ok
+test_settings_reject_nonhost_and_invalid_values (test_game.GameTests.test_settings_reject_nonhost_and_invalid_values) ... ok
+test_topic_games_are_independent (test_game.GameTests.test_topic_games_are_independent) ... ok
+test_win_and_duplicate_does_not_double_score (test_game.GameTests.test_win_and_duplicate_does_not_double_score) ... ok
+test_wrong_topic_no_score (test_game.GameTests.test_wrong_topic_no_score) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 0.244s
+
+OK
+
+Offline checks only. Live Telegram deployment not tested. Settings are stored in SQLite per chat/topic; persistent DB storage is required across redeployments.

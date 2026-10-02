@@ -73,6 +73,7 @@ class GameBot:
         self.clue_seconds = clue_seconds
         self.games = store.sessions()
         self.menus = {}
+        self.settings_menus = {}
         self.lock = asyncio.Lock()
         self.username = ''
 
@@ -90,6 +91,41 @@ class GameBot:
     def context(self, message, user):
         return {'chat_id': message['chat']['id'], 'thread_id': message.get('message_thread_id'), 'host_id':user['id']}
 
+    def seconds(self, scope):
+        return self.store.clue_time(scope,self.clue_seconds)
+
+    async def may_change_time(self, context, user):
+        scope=scope_key(context['chat_id'],context.get('thread_id'))
+        game=self.games.get(scope)
+        if game:
+            return await self.admin_or_host(user['id'],game)
+        if context['chat_id'] > 0:
+            return True
+        member=await self.api.call('getChatMember',chat_id=context['chat_id'],user_id=user['id'])
+        return member.get('status') in ('creator','administrator')
+
+    async def settings(self, message, user):
+        context=self.context(message,user)
+        scope=scope_key(context['chat_id'],context.get('thread_id'))
+        nonce=secrets.token_hex(4)
+        self.settings_menus[scope]={'nonce':nonce,'created':self.clock()}
+        keyboard=[[{'text':f'{n} ثانية','callback_data':f'time:{nonce}:{n}'} for n in row]
+                  for row in ((20,25,30),(40,45,60),(90,120,180))]
+        keyboard.append([{'text':'وقت مخصص','callback_data':f'time:{nonce}:custom'}])
+        await self.api.send(context,f'⚙️ إعدادات الوقت لهذا الكروب/القسم\nالوقت الحالي: {self.seconds(scope)} ثانية لكل تلميح.\nاختار الوقت، أو اكتب /time 75 (من 5 إلى 600 ثانية).\nالتعديل لأدمن الكروب أو صاحب اللعبة الجارية؛ يطبق من التلميح القادم.',keyboard)
+
+    async def change_time(self, message, user, value):
+        context=self.context(message,user)
+        scope=scope_key(context['chat_id'],context.get('thread_id'))
+        if not await self.may_change_time(context,user):
+            await self.api.send(context,'تعديل الوقت لأدمن الكروب أو صاحب اللعبة الجارية.')
+            return
+        if not value.isdigit() or not 5 <= int(value) <= 600:
+            await self.api.send(context,'اكتب /time 40 مثلًا. الوقت من 5 إلى 600 ثانية.')
+            return
+        self.store.set_clue_time(scope,int(value))
+        await self.api.send(context,f'✅ تم حفظ الوقت: {int(value)} ثانية لكل تلميح بهذا القسم.\nيطبق من التلميح القادم وعلى الألعاب الجديدة. مهلة التلميح الظاهر حاليًا تبقى كما هي.')
+
     async def menu(self, message, user):
         context = self.context(message, user)
         scope = scope_key(context['chat_id'], context['thread_id'])
@@ -99,7 +135,7 @@ class GameBot:
         nonce = secrets.token_hex(4)
         self.menus[scope] = {**context, 'nonce':nonce, 'stage':'specialty', 'created':self.clock()}
         keyboard = [[{'text':name,'callback_data':f'dx:{nonce}:s:{key}'}] for key,name in SPECIALTIES.items()]
-        await self.api.send(context, f'🩺 Guess the Diagnosis\nاختار الاختصاص. الكيسات والجواب بالإنكليزي.\n٤ تلميحات، لكل تلميح {self.clue_seconds} ثانية.', keyboard)
+        await self.api.send(context, f'🩺 Guess the Diagnosis\nاختار الاختصاص. الكيسات والجواب بالإنكليزي.\n٤ تلميحات، لكل تلميح {self.seconds(scope)} ثانية.', keyboard)
 
     async def callback(self, query):
         message, user = query.get('message'), query['from']
@@ -107,6 +143,21 @@ class GameBot:
             return
         scope = scope_key(message['chat']['id'], message.get('message_thread_id'))
         parts = query.get('data','').split(':')
+        if parts and parts[0]=='time':
+            current=self.settings_menus.get(scope)
+            if len(parts)!=3 or not current or parts[1]!=current['nonce'] or self.clock()-current['created']>900:
+                await self.api.call('answerCallbackQuery',callback_query_id=query['id'],text='القائمة قديمة. افتح /settings')
+                return
+            context=self.context(message,user)
+            if not await self.may_change_time(context,user):
+                await self.api.call('answerCallbackQuery',callback_query_id=query['id'],text='للأدمن أو صاحب اللعبة الجارية فقط.')
+                return
+            await self.api.call('answerCallbackQuery',callback_query_id=query['id'])
+            if parts[2]=='custom':
+                await self.api.send(context,'اكتب /time وبعده الوقت بالثواني، مثل /time 75. المسموح 5 إلى 600.')
+            else:
+                await self.change_time(message,user,parts[2])
+            return
         menu = self.menus.get(scope)
         if len(parts) != 4 or parts[0] != 'dx' or not menu or parts[1] != menu['nonce'] or self.clock()-menu['created'] > 900:
             await self.api.call('answerCallbackQuery', callback_query_id=query['id'], text='القائمة قديمة. افتح /newgame')
@@ -154,13 +205,13 @@ class GameBot:
         case = self.bank.by_id[game['case_ids'][game['index']]]
         clue = game['clue']
         text = self.bank.clues(case, game['difficulty'])[clue]
-        message = f'🩺 Case {game["index"]+1}/{len(game["case_ids"])} | {game["difficulty"].title()}\n🔎 Clue {clue+1}/4 | {POINTS[clue]} points | {self.clue_seconds} seconds\n\n{text}\n\nWhat is the diagnosis?'
+        message = f'🩺 Case {game["index"]+1}/{len(game["case_ids"])} | {game["difficulty"].title()}\n🔎 Clue {clue+1}/4 | {POINTS[clue]} points | {self.seconds(scope)} seconds\n\n{text}\n\nWhat is the diagnosis?'
         # Do not reveal the subsection: it can itself give away the answer.
         game['accepting'] = False
         self.save(scope)
         await self.api.send(game, message)
         game['opened'] = self.clock()
-        game['deadline'] = game['opened'] + self.clue_seconds
+        game['deadline'] = game['opened'] + self.seconds(scope)
         game['accepting'] = True
         game['phase'] = 'clue'
         self.save(scope)
@@ -248,8 +299,12 @@ class GameBot:
         scope = scope_key(ctx['chat_id'],ctx['thread_id'])
         if name in ('start','newgame','play'):
             await self.menu(message,user)
+        elif name in ('settings','اعدادات'):
+            await self.settings(message,user)
+        elif name == 'time':
+            await self.change_time(message,user,arg)
         elif name == 'help':
-            await self.api.send(ctx, f'🩺 /newgame تبدأ لعبة\n/guess diagnosis جواب إذا الخصوصية مفعلة\n/rounds 12 عدد مخصص\n/score نقاط الكيم\n/leaderboard النقاط المحفوظة\n/skip يتجاوز الكيس (صاحب اللعبة أو الأدمن)\n/stop يوقف اللعبة (صاحب اللعبة أو الأدمن)\n/bank إحصائية البنك\nالكيسات والجواب بالإنكليزي. ٤ تلميحات × {self.clue_seconds} ثانية.\nبالكروب عطّل Privacy Mode من BotFather لاستقبال الأجوبة العادية. الأوامر تبقى تشتغل.\nالبنك تعليمي، مو أسئلة وزارية رسمية.')
+            await self.api.send(ctx, f'🩺 /newgame تبدأ لعبة\n/settings إعدادات الوقت\n/time 40 وقت مخصص بالثواني\n/guess diagnosis جواب إذا الخصوصية مفعلة\n/rounds 12 عدد مخصص\n/score نقاط الكيم\n/leaderboard النقاط المحفوظة\n/skip يتجاوز الكيس (صاحب اللعبة أو الأدمن)\n/stop يوقف اللعبة (صاحب اللعبة أو الأدمن)\n/bank إحصائية البنك\nالكيسات والجواب بالإنكليزي. ٤ تلميحات × {self.seconds(scope)} ثانية.\nبالكروب عطّل Privacy Mode من BotFather لاستقبال الأجوبة العادية. الأوامر تبقى تشتغل.\nالبنك تعليمي، مو أسئلة وزارية رسمية.')
         elif name == 'guess':
             await self.answer(message,user,arg)
         elif name == 'rounds':
@@ -346,7 +401,7 @@ async def run():
     bot.username = identity['username']
     # Polling needs an unoccupied webhook. Preserve pending updates; stale answer timestamps are rejected.
     await api.call('deleteWebhook',drop_pending_updates=False)
-    commands = [{'command':c,'description':d} for c,d in [('newgame','Start a diagnosis game'),('help','Game instructions'),('guess','Submit a diagnosis'),('score','Current game scores'),('leaderboard','Saved scores'),('stop','Stop the game'),('skip','Skip current case'),('bank','Case bank statistics')]]
+    commands = [{'command':c,'description':d} for c,d in [('settings','إعدادات تعديل وقت التلميحات'),('time','تحديد الوقت مثل /time 40'),('newgame','Start a diagnosis game'),('help','Game instructions'),('guess','Submit a diagnosis'),('score','Current game scores'),('leaderboard','Saved scores'),('stop','Stop the game'),('skip','Skip current case'),('bank','Case bank statistics')]]
     await api.call('setMyCommands',commands=commands)
     await bot.recover()
     offset = None

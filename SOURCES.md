@@ -1,74 +1,59 @@
-# Sources and data scope
+# Sources and verification boundaries
 
-## Historical player records
+Prepared 2 October 2026. All case text is newly authored; these are not official exam items or copied clinical vignettes.
 
-The 624 biography-based entries are derived from factual identity fields in a
-FIFA 22 / SoFIFA-based 2021 snapshot. Only identity and biographical fields are
-used; game skill ratings, market values and photos are not included in the delivered bank.
-Clubs and kit numbers are explicitly dated to this snapshot in the clues.
-Brazilian domestic league records were excluded because FIFA editions can contain
-fictional/unlicensed domestic player identities. The initial displayed names were
-reviewed and common football names/Arabic aliases were added.
+## Blueprint topic source
 
-- Dataset mirror used: https://github.com/MakuG/fifa22/blob/main/players_22.csv
-- Dataset publisher: https://www.kaggle.com/datasets/stefanoleone992/fifa-22-complete-player-dataset
-- Underlying profile provider: https://sofifa.com/
+The topic headings and checklist were directly inspected at:
 
-Names and biographical facts are transformed into original Arabic clue sentences.
-No claim is made that all 700 player biographies have been independently checked
-against 700 official profiles, or that these are October 2026 squad lists.
+- https://wizari.netlify.app/
+- https://wizari.netlify.app/medicine
+- https://wizari.netlify.app/surgery
+- https://wizari.netlify.app/obgyn
+- https://wizari.netlify.app/pediatrics
 
-## Authored historical questions
+The website is a study tracker. Its ministerial authority and completeness were not independently established. Broad topics such as fractures or pituitary disorders require educational selection of specific diagnoses. A diagnosis being related to a heading does not certify that it will appear on the examination.
 
-76 player entries use manually written historical career and achievement clues.
-These include retired players active during the requested period and selected
-younger stars absent from the 2021 snapshot. Clubs use historical identity facts;
-founding dates can refer to predecessors/roots (e.g. Red Bull Salzburg), and
-stadiums can be historical rather than current homes. Sources for checking and
-improving individual entries include the relevant official club histories and:
+## Primary clinical references consulted for selected patterns
 
-- FIFA World Cup history and player articles: https://www.fifa.com/
-- UEFA competition/player history: https://www.uefa.com/
-- Premier League statistics and records: https://www.premierleague.com/
-- FC Barcelona player/club history: https://www.fcbarcelona.com/
-- Real Madrid player/club history: https://www.realmadrid.com/
+These references were used to check selected clinical patterns, not to certify every one of the 700 cases. The full bank has not undergone independent clinician review.
 
-These links describe provenance/reference resources, not a claim that every
-handwritten clue was individually retrieved from each of these sites during this build.
+- Pneumonia: https://www.nhlbi.nih.gov/health/pneumonia/symptoms
+- Pulmonary embolism: https://www.nhlbi.nih.gov/health/pulmonary-embolism
+- VTE diagnosis: https://www.nhlbi.nih.gov/health/venous-thromboembolism/diagnosis
+- Endocarditis: https://www.nhlbi.nih.gov/health/heart-inflammation/endocarditis
+- Compartment syndrome: https://www.orthoinfo.org/diseases--conditions/compartment-syndrome/
+- Scaphoid fracture: https://www.orthoinfo.org/diseases--conditions/scaphoid-fracture-of-the-wrist
+- Distal radius fractures: https://www.orthoinfo.org/diseases--conditions/distal-radius-fractures-broken-wrist/
+- Open fractures: https://www.orthoinfo.org/diseases--conditions/open-fractures/
+- Ectopic pregnancy and miscarriage: https://www.nice.org.uk/guidance/ng126
+- Pre-eclampsia: https://www.nhs.uk/conditions/pre-eclampsia/
+- Childhood nephrotic syndrome: https://www.niddk.nih.gov/health-information/kidney-disease/children/nephrotic-syndrome-children
+- Measles: https://www.cdc.gov/measles/signs-symptoms/index.html
+- Pertussis: https://cdc.gov/pertussis/hcp/clinical-signs/index.html
+- Diphtheria: https://www.cdc.gov/diphtheria/hcp/clinical-signs/index.html
+- Sickle cell disease: https://www.nhlbi.nih.gov/health/sickle-cell-disease/symptoms
+- Thalassemia: https://www.nhlbi.nih.gov/health/thalassemia/symptoms
 
-## Verified modern supplement (v2)
+## Technical reference
 
-121 original Arabic clues were added without changing any original clue, alias or ID.
-They cover 64 players and 16 clubs: 56 clues concern 2026, 42 concern 2025 and 23 concern 2024.
-Official club, FIFA, UEFA and Premier League pages were retrieved on 2026-10-01.
-Each extra clue records its event year, source URL, difficulty and checking date.
+The bot calls the HTTPS Telegram Bot API directly using Python's standard library:
 
-- `data/modern_clues.csv`: every new clue with its source and year.
-- `data/modern_sources.json`: exact primary-source URLs used.
-- `add_modern_clues.py`: reproducible, idempotent supplement builder; it uses the packaged facts and does not fetch live updates.
+- https://core.telegram.org/bots/api
 
-Original 2021 snapshot facts remain explicitly dated. This selective supplement does
-not turn all 700 entries into current squad or transfer records. A source's checking
-date is separate from the event year. New clue slots are sampled by difficulty while
-retaining at least one original clue in each supplemented round.
+Relevant features: getUpdates polling, inline keyboards, callback queries, sendMessage with message_thread_id, getChatMember, setMyCommands, and deleteWebhook.
 
-## Software documentation
+## Validation completed
 
-- python-telegram-bot Application API (22.8):
-  https://docs.python-telegram-bot.org/en/stable/telegram.ext.application.html
-- Telegram Bot features and group privacy:
-  https://core.telegram.org/bots/features#privacy-mode
+Automated offline tests check clue timing and final answer window, saved scores and recovery, topic isolation, owner-only menu choices, host/admin stop rules, alias acceptance, conservative spelling tolerance, random selection, and no duplicate scoring. Tests use a fake Telegram transport and a controllable clock.
 
-- Telegram topic IDs and the General topic:
-  https://core.telegram.org/api/forum
-- Bot API message routing:
-  https://core.telegram.org/bots/api#sendmessage
-- python-telegram-bot Message reply routing:
-  https://docs.python-telegram-bot.org/en/stable/telegram.message.html
+Live Telegram connectivity, BotFather setup, and real hosting were not tested because no bot token was provided. The bot is packaged for the user to connect and run. No external account was created or deployed.
 
-## License
+## Expansion references
 
-The bot's original code and original Arabic clue wording are provided under the
-MIT license in LICENSE. That license does not assert ownership of third-party
-data, player identities, club names or trademarks. Consult the linked dataset
-publisher for any separate data-use terms. No logos, photos or game assets are packaged.
+- NCI: https://www.cancer.gov/types/breast/breast-cancer-types/paget-disease-breast
+- NIDDK: https://www.niddk.nih.gov/health-information/endocrine-diseases/multiple-endocrine-neoplasia-type-1
+- RCOG: https://www.rcog.org.uk/guidance/browse-all-guidance/green-top-guidelines/ovarian-masses-in-premenopausal-women-management-of-suspected-green-top-guideline-no-62/
+- NICE: https://www.nice.org.uk/guidance/NG123
+
+Checklist inspected again on 2026-10-02. Detailed representative mappings: BLUEPRINT_AUDIT.md and data/blueprint_topic_crosswalk.json. References validate selected patterns, not every newly authored case.
