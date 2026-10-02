@@ -1,432 +1,386 @@
+#!/usr/bin/env python3
+"""Telegram diagnosis game. Standard library only, Python 3.11+."""
 import asyncio
+import json
 import logging
 import os
 import secrets
-import tempfile
 import time
-from dataclasses import dataclass, field
+import urllib.error
+import urllib.request
 from pathlib import Path
-
-from dotenv import load_dotenv
-from telegram import InlineKeyboardButton as Button, InlineKeyboardMarkup as Keyboard, BotCommand
-from telegram.ext import Application, CallbackQueryHandler, CommandHandler, MessageHandler, filters
-from core import Bank, Store, POINTS, split_scope
+from engine import Bank, Store, SPECIALTIES, LEVELS, POINTS, CLUE_SECONDS, scope_key
 
 ROOT = Path(__file__).resolve().parent
-load_dotenv(ROOT / '.env')
-bank = Bank(ROOT / 'data')
-db_path=Path(os.environ.get('DATABASE_PATH', 'state/game.sqlite3'))
-if not db_path.is_absolute():
-    db_path=ROOT/db_path
-store = Store(db_path)
-CLUE_SECONDS = int(os.environ.get('CLUE_SECONDS', '20'))
-RECENT_QUESTION_SHARE = float(os.environ.get('RECENT_QUESTION_SHARE', '0.5'))
-if CLUE_SECONDS < 1:
-    raise ValueError('CLUE_SECONDS must be positive')
-if not 0 <= RECENT_QUESTION_SHARE <= 1:
-    raise ValueError('RECENT_QUESTION_SHARE must be between 0 and 1')
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s %(name)s: %(message)s')
-# Request URLs can contain the bot token; keep HTTP logging quiet.
-logging.getLogger('httpx').setLevel(logging.WARNING)
-logging.getLogger('httpcore').setLevel(logging.WARNING)
-log = logging.getLogger('football')
+LOG = logging.getLogger('diagnosis_game')
 
+def load_env():
+    path = ROOT / '.env'
+    if path.exists():
+        for line in path.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                name, value = line.split('=', 1)
+                os.environ.setdefault(name.strip(), value.strip().strip('"').strip("'"))
 
-@dataclass
-class Game:
-    owner: int
-    mode: str
-    nonce: str = field(default_factory=lambda: secrets.token_hex(4))
-    phase: str = 'setup'
-    rounds: int = 0
-    players: dict = field(default_factory=dict)
-    scores: dict = field(default_factory=dict)
-    item: dict | None = None
-    clue: int = -1
-    deadline: float = 0
-    sent_at: int = 0
-    winner: tuple | None = None
-    event: asyncio.Event = field(default_factory=asyncio.Event)
-    lock: asyncio.Lock = field(default_factory=asyncio.Lock)
-    task: asyncio.Task | None = None
+class TelegramError(Exception):
+    def __init__(self, code, description, retry_after=0):
+        super().__init__(description)
+        self.code, self.description, self.retry_after = code, description, retry_after
 
+class Telegram:
+    def __init__(self, token):
+        self.base = f'https://api.telegram.org/bot{token}/'
 
-games = {}
-setups = {}  # (chat_id, topic_id) -> (owner, nonce)
-
-
-def mode_label(mode):
-    return 'اللاعب' if mode == 'players' else 'النادي'
-
-
-def scope_key(update):
-    message = update.effective_message
-    topic = getattr(message, 'message_thread_id', None) or 0
-    # General is represented by 0, including API updates explicitly using ID 1.
-    if topic == 1:
-        topic = 0
-    return update.effective_chat.id, topic
-
-
-async def send(bot, scope, text, **kwargs):
-    chat_id, topic_id = split_scope(scope)
-    # Never retry a closed/deleted topic by sending into General.
-    return await bot.send_message(chat_id, text, message_thread_id=topic_id or None, **kwargs)
-
-
-async def admin_or_owner(update, context, owner=None):
-    user = update.effective_user
-    if not user:
-        return False
-    if user.id == owner or update.effective_chat.type == 'private':
-        return True
-    member = await context.bot.get_chat_member(update.effective_chat.id, user.id)
-    return member.status in ('creator', 'administrator')
-
-
-async def help_command(update, context):
-    await update.effective_message.reply_text(
-        '⚽ احزر اللاعب / النادي\n'
-        '/game — اختار النوع وعدد الجولات\n'
-        '/join — انضم للعبة\n/begin — صاحب اللعبة يبدأ\n'
-        '/game players 10 أو /game clubs 5 — عدد مباشر\n'
-        '/rounds 12 — عدد خاص قبل البداية\n'
-        '/score — نقاط هذه اللعبة\n/top — النقاط المحفوظة لهذا القسم\n'
-        '/stop — إيقاف اللعبة (صاحبها أو الأدمن)\n'
-        '/remaining — عدد الأسئلة غير المستخدمة\n'
-        '/reset players أو /reset clubs — إعادة بنك الأسئلة بعد تأكيد الأدمن\n'
-        '٤ تلميحات، كل واحد ٢٠ ثانية. النقاط: ٤٠، ٣٠، ٢٠، ١٠.\n'
-        'اكتب الاسم بالعربي إذا إله اسم بديل، أو بالإنكليزي. لازم /join قبل الجواب.\n'
-        'التلميحات القديمة والحديثة مختلطة حسب الصعوبة، والسنة مكتوبة.\n'
-        'ابدأ /game داخل القسم المطلوب؛ كل قسم إله لعبة ونقاط مستقلة.'
-    )
-
-
-async def game_command(update, context):
-    chat = scope_key(update)
-    if chat in games:
-        await update.effective_message.reply_text('أكو لعبة أو إعدادات مفتوحة. كمّلها أو استخدم /stop.')
-        return
-    if context.args:
-        if len(context.args) != 2 or context.args[0] not in bank.items:
-            await update.effective_message.reply_text('مثال: /game players 10 أو /game clubs 5')
-            return
-        try:
-            rounds = int(context.args[1])
-        except ValueError:
-            rounds = 0
-        g = Game(update.effective_user.id, context.args[0])
-        if not 1 <= rounds <= len(store.remaining(chat,g.mode,bank)):
-            await update.effective_message.reply_text('العدد لازم يكون من ١ إلى عدد الأسئلة المتبقية. استخدم /remaining.')
-            return
-        games[chat] = g
-        setups.pop(chat,None)
-        await lobby(context.bot,chat,g,rounds)
-        return
-    nonce = secrets.token_hex(4)
-    setups[chat] = (update.effective_user.id,nonce)
-    await update.effective_message.reply_text('اختار نوع اللعبة:', reply_markup=Keyboard([[
-        Button('⚽ احزر اللاعب', callback_data=f'mode:{nonce}:players'),
-        Button('🏟 احزر النادي', callback_data=f'mode:{nonce}:clubs')]]))
-
-
-async def lobby(bot, chat, g, rounds):
-    g.rounds = rounds
-    g.phase = 'lobby'
-    await send(bot,chat, f'⚽ احزر {mode_label(g.mode)} — {rounds} جولات\n'
-        'اضغط انضمام، وبعدها صاحب اللعبة يضغط ابدأ. تگدر تدخل أثناء اللعبة همين.',
-        reply_markup=Keyboard([[
-            Button('🙋 انضمام', callback_data=f'join:{g.nonce}'),
-            Button('▶️ ابدأ', callback_data=f'begin:{g.nonce}')]]))
-
-
-async def select_rounds(bot,chat,g):
-    available = len(store.remaining(chat,g.mode,bank))
-    choices = [n for n in (5,10,15,20) if n <= available]
-    if not choices and available:
-        choices = [available]
-    await send(bot,chat, f'عدد الأسئلة المتبقية: {available}\nاختار عدد الجولات أو اكتب /rounds 12',
-        reply_markup=Keyboard([[Button(str(n),callback_data=f'rounds:{g.nonce}:{n}') for n in choices]]) if choices else None)
-
-
-async def callback(update, context):
-    q = update.callback_query
-    await q.answer()
-    chat,user = scope_key(update),update.effective_user
-    parts = q.data.split(':')
-    action, nonce = parts[:2]
-    if action == 'mode':
-        setup = setups.get(chat)
-        if not setup or setup != (user.id,nonce) or chat in games:
-            return
-        mode = parts[2]
-        if not store.remaining(chat,mode,bank):
-            await q.message.reply_text('خلصت الأسئلة. الأدمن يگدر يستخدم /reset لإعادتها.')
-            return
-        g = Game(user.id,mode)
-        games[chat] = g
-        setups.pop(chat,None)
-        await q.edit_message_reply_markup(reply_markup=None)
-        await select_rounds(context.bot,chat,g)
-        return
-    if action == 'reset':
-        # Admin authorization is checked again when confirmation is clicked.
-        pending = context.chat_data.get(('reset',chat[1]))
-        if not pending or pending != (nonce,parts[2],user.id):
-            return
-        if chat in games or not await admin_or_owner(update,context):
-            return
-        store.reset_used(chat,parts[2])
-        context.chat_data.pop(('reset',chat[1]),None)
-        await q.edit_message_text('تمت إعادة بنك الأسئلة لهذا النوع. النقاط تبقى محفوظة.')
-        return
-    g = games.get(chat)
-    if not g or g.nonce != nonce:
-        return
-    if action == 'join':
-        g.players[user.id] = user.full_name
-        await q.message.reply_text(f'انضم {user.full_name} ✅')
-    elif action == 'rounds' and g.phase == 'setup' and user.id == g.owner:
-        n = int(parts[2])
-        if 1 <= n <= len(store.remaining(chat,g.mode,bank)):
-            await q.edit_message_reply_markup(reply_markup=None)
-            await lobby(context.bot,chat,g,n)
-    elif action == 'begin':
-        await begin_game(update,context,g)
-
-
-async def rounds_command(update,context):
-    chat = scope_key(update)
-    g = games.get(chat)
-    if not g or g.phase not in ('setup','lobby') or update.effective_user.id != g.owner:
-        return
-    try:
-        n = int(context.args[0])
-    except (IndexError,ValueError):
-        n = 0
-    if not 1 <= n <= len(store.remaining(chat,g.mode,bank)):
-        await update.effective_message.reply_text('اختار عدد موجب ضمن الأسئلة المتبقية. /remaining')
-        return
-    await lobby(context.bot,chat,g,n)
-
-
-async def join_command(update,context):
-    g = games.get(scope_key(update))
-    if not g:
-        await update.effective_message.reply_text('افتح لعبة أولاً: /game')
-        return
-    u = update.effective_user
-    g.players[u.id] = u.full_name
-    await update.effective_message.reply_text(f'انضم {u.full_name} ✅')
-
-
-async def begin_command(update,context):
-    g = games.get(scope_key(update))
-    if g:
-        await begin_game(update,context,g)
-
-
-async def begin_game(update,context,g):
-    if g.phase != 'lobby' or not await admin_or_owner(update,context,g.owner):
-        return
-    if not g.players:
-        await update.effective_message.reply_text('لازم ينضم لاعب واحد على الأقل: /join')
-        return
-    g.phase = 'running'
-    chat = scope_key(update)
-    store.mark_active(chat,True)
-    # Managed here so shutdown can cancel games before waiting for their timers.
-    g.task = asyncio.create_task(play(context.application,chat,g),name=f'game-{chat}')
-
-
-async def play(app,chat,g):
-    try:
-        for round_number in range(1,g.rounds+1):
-            item = store.draw(chat,g.mode,bank,recent_share=RECENT_QUESTION_SHARE)
-            if not item:
-                await send(app.bot,chat,'خلصت الأسئلة؛ ما راح أعيدها تلقائياً.')
-                break
-            async with g.lock:
-                g.item,g.winner,g.clue = item,None,-1
-                g.event.clear()
-            for i,clue in enumerate(bank.choose_clues(item)):
-                async with g.lock:
-                    g.clue = -1  # Close scoring while the next clue is being sent.
-                    msg = await send(app.bot,chat,
-                        f'🎯 الجولة {round_number}/{g.rounds} — احزر {mode_label(g.mode)}\n'
-                        f'💡 التلميح {i+1}/4 — {POINTS[i]} نقطة\n{clue}\n⏱ {CLUE_SECONDS} ثانية')
-                    g.clue = i
-                    g.sent_at = msg.message_id
-                    g.deadline = time.monotonic()+CLUE_SECONDS
-                try:
-                    await asyncio.wait_for(g.event.wait(),timeout=CLUE_SECONDS)
-                except asyncio.TimeoutError:
-                    pass
-                async with g.lock:
-                    g.clue = -1
-                    winner = g.winner
-                if winner:
-                    break
-            async with g.lock:
-                g.item = None
-            if winner:
-                name,points = winner
-                await send(app.bot,chat,f'✅ {name} حزرها! +{points} نقطة\nالجواب: {item["answer"]}')
-            else:
-                await send(app.bot,chat,f'⌛ خلص الوقت. الجواب: {item["answer"]}')
-            await asyncio.sleep(3)
-        await send(app.bot,chat,'🏆 انتهت اللعبة!\n'+session_table(g))
-    except asyncio.CancelledError:
-        raise
-    except Exception as e:
-        # Log only type: never expose token-bearing HTTP exception text.
-        log.error('Game interrupted: %s',type(e).__name__)
-        try:
-            await send(app.bot,chat,'توقفت اللعبة بسبب مشكلة اتصال. النقاط والأسئلة المستخدمة محفوظة. /game')
-        except Exception:
-            pass
-    finally:
-        store.mark_active(chat,False)
-        if games.get(chat) is g:
-            games.pop(chat,None)
-
-
-async def guess(update,context):
-    message = update.effective_message
-    chat = scope_key(update)
-    g = games.get(chat)
-    if not g or g.phase != 'running' or not update.effective_user:
-        return
-    u = update.effective_user
-    if u.id not in g.players:
-        return
-    async with g.lock:
-        # Message-id guard rejects guesses sent before this clue in this chat.
-        if (g.item is None or g.clue < 0 or g.winner or
-                time.monotonic() >= g.deadline or message.message_id <= g.sent_at):
-            return
-        if not bank.matches(g.mode,g.item,message.text):
-            return
-        points = POINTS[g.clue]
-        store.score(chat,u.id,u.full_name,points)
-        g.scores[u.id] = g.scores.get(u.id,0)+points
-        g.players[u.id] = u.full_name
-        g.winner = (u.full_name,points)
-        g.event.set()
-
-
-def session_table(g):
-    rows = sorted(g.scores.items(),key=lambda x:(-x[1],x[0]))[:10]
-    return '\n'.join(f'{i}. {g.players[u]} — {p}' for i,(u,p) in enumerate(rows,1)) or 'بعد ماكو نقاط.'
-
-
-async def score_command(update,context):
-    g = games.get(scope_key(update))
-    await update.effective_message.reply_text(session_table(g) if g else 'ماكو لعبة مفتوحة. استخدم /top للنقاط المحفوظة.')
-
-
-async def top_command(update,context):
-    rows = store.leaders(scope_key(update))
-    text = '\n'.join(f'{i}. {name} — {p}' for i,(name,p) in enumerate(rows,1)) or 'بعد ماكو نقاط.'
-    await update.effective_message.reply_text('🏆 ترتيب هذا القسم\n'+text)
-
-
-async def remaining_command(update,context):
-    chat = scope_key(update)
-    await update.effective_message.reply_text('\n'.join(
-        f'{"لاعبين" if m=="players" else "أندية"}: {len(store.remaining(chat,m,bank))}/{len(bank.items[m])}'
-        for m in bank.items))
-
-
-async def stop_command(update,context):
-    chat = scope_key(update)
-    g = games.get(chat)
-    owner = g.owner if g else (setups.get(chat) or (None,None))[0]
-    if not await admin_or_owner(update,context,owner):
-        return
-    setups.pop(chat,None)
-    if g:
-        if g.task:
-            g.task.cancel()
+    async def call(self, method, **payload):
+        def request():
+            req = urllib.request.Request(self.base+method, data=json.dumps(payload).encode(), headers={'Content-Type':'application/json'})
             try:
-                await g.task
-            except asyncio.CancelledError:
-                pass
-        games.pop(chat,None)
-        store.mark_active(chat,False)
-    await update.effective_message.reply_text('تم إيقاف اللعبة. النقاط والأسئلة المستخدمة محفوظة.')
-
-
-async def reset_command(update,context):
-    chat = scope_key(update)
-    if chat in games or chat in setups:
-        await update.effective_message.reply_text('أوقف اللعبة أولاً: /stop')
-        return
-    if not await admin_or_owner(update,context):
-        await update.effective_message.reply_text('إعادة الأسئلة للأدمن فقط.')
-        return
-    if len(context.args)!=1 or context.args[0] not in bank.items:
-        await update.effective_message.reply_text('/reset players أو /reset clubs')
-        return
-    mode,nonce = context.args[0],secrets.token_hex(4)
-    context.chat_data[('reset',chat[1])] = (nonce,mode,update.effective_user.id)
-    await update.effective_message.reply_text('راح ترجع الأسئلة القديمة متاحة بهذا الكروب. تأكد؟',
-        reply_markup=Keyboard([[Button('تأكيد إعادة الأسئلة',callback_data=f'reset:{nonce}:{mode}')]]))
-
-
-async def backup_command(update,context):
-    # Never publish a database containing other groups' identities in a group.
-    allowed = {int(x) for x in os.environ.get('OWNER_IDS','').split(',') if x.strip().isdigit()}
-    if update.effective_chat.type!='private' or update.effective_user.id not in allowed:
-        await update.effective_message.reply_text('النسخة الاحتياطية للمشغّل بالخاص فقط. ضيف رقمك إلى OWNER_IDS.')
-        return
-    with tempfile.TemporaryDirectory() as d:
-        path = Path(d)/'game-backup.sqlite3'
-        store.backup(path)
-        with path.open('rb') as f:
-            await update.effective_message.reply_document(f,filename='game-backup.sqlite3',caption='النقاط والأسئلة المستخدمة لكل الكروبات.')
-
-
-async def post_init(app):
-    await app.bot.set_my_commands([BotCommand(n,d) for n,d in [
-        ('game','لعبة جديدة'),('join','انضمام'),('begin','ابدأ اللعبة'),
-        ('rounds','عدد خاص للجولات'),('score','نقاط اللعبة'),('top','ترتيب الكروب'),
-        ('remaining','الأسئلة المتبقية'),('stop','إيقاف'),('help','التعليمات'),('backup','نسخة احتياطية للمشغّل')]])
-    for chat in store.interrupted():
+                with urllib.request.urlopen(req, timeout=45) as response:
+                    result = json.load(response)
+            except urllib.error.HTTPError as exc:
+                try:
+                    result = json.loads(exc.read().decode())
+                except Exception:
+                    raise TelegramError(exc.code, 'Telegram HTTP request failed') from None
+            except (urllib.error.URLError, TimeoutError, OSError):
+                # Do not expose token-bearing request URLs in logs.
+                raise TelegramError(0, 'Network request failed') from None
+            if not result.get('ok'):
+                raise TelegramError(result.get('error_code',0), result.get('description','Telegram rejected request'), result.get('parameters',{}).get('retry_after',0))
+            return result['result']
         try:
-            await send(app.bot,chat,'أعيد تشغيل البوت؛ اللعبة السابقة توقفت. النقاط والأسئلة المستخدمة محفوظة. ابدأ بـ /game')
-        except Exception:
-            log.warning('Could not notify interrupted chat')
-        store.mark_active(chat,False)
+            return await asyncio.to_thread(request)
+        except TelegramError as error:
+            if error.code == 429 and error.retry_after:
+                await asyncio.sleep(min(error.retry_after, 60))
+                return await asyncio.to_thread(request)
+            raise
 
+    async def send(self, game, text, keyboard=None):
+        payload = {'chat_id': game['chat_id'], 'text': text}
+        if game.get('thread_id') not in (None, 1):
+            payload['message_thread_id'] = game['thread_id']
+        if keyboard is not None:
+            payload['reply_markup'] = {'inline_keyboard': keyboard}
+        return await self.call('sendMessage', **payload)
 
-async def post_stop(app):
-    for g in list(games.values()):
-        if g.task:
-            g.task.cancel()
-    await asyncio.gather(*(g.task for g in list(games.values()) if g.task),return_exceptions=True)
+class GameBot:
+    def __init__(self, api, bank, store, clock=time.time, clue_seconds=CLUE_SECONDS):
+        self.api, self.bank, self.store, self.clock = api, bank, store, clock
+        if not isinstance(clue_seconds, int) or isinstance(clue_seconds, bool) or clue_seconds <= 0:
+            raise ValueError("CLUE_SECONDS must be a positive integer in seconds")
+        self.clue_seconds = clue_seconds
+        self.games = store.sessions()
+        self.menus = {}
+        self.lock = asyncio.Lock()
+        self.username = ''
 
+    def save(self, scope):
+        self.store.save(scope, self.games[scope])
 
-async def error_handler(update,context):
-    log.error('Update failed: %s',type(context.error).__name__)
+    async def admin_or_host(self, user_id, game):
+        if user_id == game['host_id']:
+            return True
+        if game['chat_id'] > 0:
+            return False
+        member = await self.api.call('getChatMember', chat_id=game['chat_id'], user_id=user_id)
+        return member.get('status') in ('creator','administrator')
 
+    def context(self, message, user):
+        return {'chat_id': message['chat']['id'], 'thread_id': message.get('message_thread_id'), 'host_id':user['id']}
 
-def main():
-    token = os.environ.get('BOT_TOKEN','')
-    if not token or token=='PUT_YOUR_BOT_TOKEN_HERE':
-        raise SystemExit('حط BOT_TOKEN بملف .env أو بمتغيرات الاستضافة أولاً.')
-    app = (Application.builder().token(token).concurrent_updates(False)
-        .post_init(post_init).post_stop(post_stop).build())
-    for command,fn in [('start',help_command),('help',help_command),('game',game_command),
-        ('join',join_command),('begin',begin_command),('rounds',rounds_command),
-        ('score',score_command),('top',top_command),('remaining',remaining_command),
-        ('stop',stop_command),('reset',reset_command),('backup',backup_command)]:
-        app.add_handler(CommandHandler(command,fn))
-    app.add_handler(CallbackQueryHandler(callback))
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND & ~filters.UpdateType.EDITED_MESSAGE,guess))
-    app.add_error_handler(error_handler)
-    app.run_polling(drop_pending_updates=True)
+    async def menu(self, message, user):
+        context = self.context(message, user)
+        scope = scope_key(context['chat_id'], context['thread_id'])
+        if scope in self.games:
+            await self.api.send(context, 'لعبة شغالة بهذا القسم. /score للنقاط، /stop لإنهائها بواسطة صاحب اللعبة أو الأدمن.')
+            return
+        nonce = secrets.token_hex(4)
+        self.menus[scope] = {**context, 'nonce':nonce, 'stage':'specialty', 'created':self.clock()}
+        keyboard = [[{'text':name,'callback_data':f'dx:{nonce}:s:{key}'}] for key,name in SPECIALTIES.items()]
+        await self.api.send(context, f'🩺 Guess the Diagnosis\nاختار الاختصاص. الكيسات والجواب بالإنكليزي.\n٤ تلميحات، لكل تلميح {self.clue_seconds} ثانية.', keyboard)
 
+    async def callback(self, query):
+        message, user = query.get('message'), query['from']
+        if not message:
+            return
+        scope = scope_key(message['chat']['id'], message.get('message_thread_id'))
+        parts = query.get('data','').split(':')
+        menu = self.menus.get(scope)
+        if len(parts) != 4 or parts[0] != 'dx' or not menu or parts[1] != menu['nonce'] or self.clock()-menu['created'] > 900:
+            await self.api.call('answerCallbackQuery', callback_query_id=query['id'], text='القائمة قديمة. افتح /newgame')
+            return
+        if user['id'] != menu['host_id']:
+            await self.api.call('answerCallbackQuery', callback_query_id=query['id'], text='صاحب اللعبة يختار الإعدادات.')
+            return
+        action, value = parts[2:]
+        expected_stage = {'s':'specialty', 'd':'difficulty', 'r':'rounds'}
+        if expected_stage.get(action) != menu['stage'] or scope in self.games:
+            await self.api.call('answerCallbackQuery', callback_query_id=query['id'], text='هذا الاختيار صار قديم.')
+            return
+        await self.api.call('answerCallbackQuery', callback_query_id=query['id'])
+        if action == 's' and value in SPECIALTIES:
+            menu.update(specialty=value, stage='difficulty')
+            keyboard = [[{'text':level.title(), 'callback_data':f'dx:{menu["nonce"]}:d:{level}'} for level in LEVELS]]
+            await self.api.send(menu, f'{SPECIALTIES[value]}\nاختار مستوى الكيس:', keyboard)
+        elif action == 'd' and value in LEVELS:
+            menu.update(difficulty=value, stage='rounds')
+            keyboard = [[{'text':str(n), 'callback_data':f'dx:{menu["nonce"]}:r:{n}'} for n in (5,10,15)], [{'text':'20', 'callback_data':f'dx:{menu["nonce"]}:r:20'}, {'text':'عدد آخر', 'callback_data':f'dx:{menu["nonce"]}:r:custom'}]]
+            await self.api.send(menu, 'اختار عدد الجولات، أو اختار عدد آخر واكتب العدد من 1 إلى 50.', keyboard)
+        elif action == 'r':
+            if value == 'custom':
+                menu['stage'] = 'custom'
+                await self.api.send(menu, 'اكتب عدد الجولات من 1 إلى 50. إذا Privacy Mode شغال استعمل /rounds 12')
+            elif value.isdigit() and 1 <= int(value) <= 50:
+                await self.begin(scope, int(value))
+
+    async def begin(self, scope, rounds):
+        menu = self.menus[scope]
+        ids = self.bank.pick(menu['specialty'], rounds, self.store.history(scope, menu['specialty']))
+        if not ids:
+            await self.api.send(menu, 'ماكو كيسات لهذا الاختصاص.')
+            return
+        game = {k:menu[k] for k in ('chat_id','thread_id','host_id','specialty','difficulty')}
+        game.update(case_ids=ids, index=0, clue=0, phase='next', deadline=self.clock(), scores={}, accepting=False, opened=0)
+        self.games[scope] = game
+        self.save(scope)
+        del self.menus[scope]
+        await self.api.send(game, f'🎮 {SPECIALTIES[game["specialty"]]} — {game["difficulty"].title()}\nالجولات: {len(ids)}\nالنقاط: 4 ← 3 ← 2 ← 1\nاكتب تشخيص واحد بالإنكليزي. الجميع يگدر يشارك بدون join.\n/guess diagnosis بديل للجواب العادي.')
+        await self.advance(scope)
+
+    async def send_clue(self, scope):
+        game = self.games[scope]
+        case = self.bank.by_id[game['case_ids'][game['index']]]
+        clue = game['clue']
+        text = self.bank.clues(case, game['difficulty'])[clue]
+        message = f'🩺 Case {game["index"]+1}/{len(game["case_ids"])} | {game["difficulty"].title()}\n🔎 Clue {clue+1}/4 | {POINTS[clue]} points | {self.clue_seconds} seconds\n\n{text}\n\nWhat is the diagnosis?'
+        # Do not reveal the subsection: it can itself give away the answer.
+        game['accepting'] = False
+        self.save(scope)
+        await self.api.send(game, message)
+        game['opened'] = self.clock()
+        game['deadline'] = game['opened'] + self.clue_seconds
+        game['accepting'] = True
+        game['phase'] = 'clue'
+        self.save(scope)
+
+    async def advance(self, scope):
+        game = self.games[scope]
+        if game['index'] >= len(game['case_ids']):
+            await self.finish(scope)
+            return
+        case = self.bank.by_id[game['case_ids'][game['index']]]
+        available = {c['diagnosis_key'] for c in self.bank.cases if c['specialty'] == game['specialty']}
+        self.store.mark_seen(scope, game['specialty'], case['diagnosis_key'], available)
+        game['clue'] = 0
+        await self.send_clue(scope)
+
+    async def reveal(self, scope, winner=None):
+        game = self.games[scope]
+        if game['phase'] != 'clue':
+            return
+        case = self.bank.by_id[game['case_ids'][game['index']]]
+        game['accepting'] = False
+        game['phase'] = 'next'
+        game['index'] += 1
+        game['deadline'] = self.clock()+5
+        self.store.settle(scope,game,winner)
+        intro = f'✅ {winner["name"]} +{winner["points"]} points' if winner else '⏰ انتهى الكيس بدون جواب صحيح.'
+        topics = case.get('blueprint_topics') or [case['section']]
+        topic = f'{case["section"]} — {topics[0]}'
+        await self.api.send(game, f'{intro}\nDiagnosis: {case["diagnosis"]}\nKey finding: {case["facts"][-1]}\nBlueprint topic: {topic}')
+
+    async def answer(self, message, user, text):
+        scope = scope_key(message['chat']['id'], message.get('message_thread_id'))
+        game = self.games.get(scope)
+        if not game or game['phase'] != 'clue' or not game['accepting']:
+            return
+        now = self.clock()
+        # Reject already-expired, queued pre-round, or older-hint answers.
+        timestamp = message.get('date', int(now))
+        if now >= game['deadline'] or timestamp < int(game['opened']):
+            return
+        case = self.bank.by_id[game['case_ids'][game['index']]]
+        if not self.bank.accepted(text, case):
+            return
+        points = POINTS[game['clue']]
+        name = user.get('first_name','Player')[:80]
+        uid = str(user['id'])
+        row = game['scores'].setdefault(uid, {'name':name,'points':0,'wins':0})
+        row.update(name=name, points=row['points']+points, wins=row['wins']+1)
+        await self.reveal(scope, {'uid':user['id'],'name':name,'points':points})
+
+    async def finish(self, scope):
+        game = self.games[scope]
+        rows = sorted(game['scores'].values(), key=lambda r:(-r['points'],-r['wins'],r['name']))
+        lines = [f'🏁 انتهت اللعبة — {len(game["case_ids"])} جولات']
+        lines += [f'{i}. {r["name"]}: {r["points"]} points ({r["wins"]} wins)' for i,r in enumerate(rows[:15],1)]
+        if not rows:
+            lines.append('ماكو أجوبة صحيحة بهذا الكيم.')
+        lines.append('/newgame للعبة جديدة، /leaderboard للنقاط المحفوظة بهذا القسم.')
+        await self.api.send(game, '\n'.join(lines))
+        self.store.delete(scope)
+        del self.games[scope]
+
+    async def tick(self):
+        async with self.lock:
+            for scope in list(self.games):
+                game = self.games[scope]
+                if self.clock() < game['deadline']:
+                    continue
+                try:
+                    if game['phase'] == 'next':
+                        await self.advance(scope)
+                    elif game['clue'] < 3:
+                        game['clue'] += 1
+                        await self.send_clue(scope)
+                    else:
+                        await self.reveal(scope)
+                except TelegramError as exc:
+                    LOG.warning('Game delivery failed with code %s', exc.code)
+                    # A failed delivery stops this game instead of silently skipping a clue.
+                    self.store.delete(scope)
+                    self.games.pop(scope,None)
+
+    async def command(self, message, user, name, arg):
+        ctx = self.context(message,user)
+        scope = scope_key(ctx['chat_id'],ctx['thread_id'])
+        if name in ('start','newgame','play'):
+            await self.menu(message,user)
+        elif name == 'help':
+            await self.api.send(ctx, f'🩺 /newgame تبدأ لعبة\n/guess diagnosis جواب إذا الخصوصية مفعلة\n/rounds 12 عدد مخصص\n/score نقاط الكيم\n/leaderboard النقاط المحفوظة\n/skip يتجاوز الكيس (صاحب اللعبة أو الأدمن)\n/stop يوقف اللعبة (صاحب اللعبة أو الأدمن)\n/bank إحصائية البنك\nالكيسات والجواب بالإنكليزي. ٤ تلميحات × {self.clue_seconds} ثانية.\nبالكروب عطّل Privacy Mode من BotFather لاستقبال الأجوبة العادية. الأوامر تبقى تشتغل.\nالبنك تعليمي، مو أسئلة وزارية رسمية.')
+        elif name == 'guess':
+            await self.answer(message,user,arg)
+        elif name == 'rounds':
+            menu = self.menus.get(scope)
+            if menu and menu['host_id'] == user['id'] and menu['stage'] == 'custom':
+                if arg.isdigit() and 1<=int(arg)<=50:
+                    await self.begin(scope,int(arg))
+                else:
+                    await self.api.send(ctx,'اكتب عدد من 1 إلى 50.')
+        elif name in ('stop','skip'):
+            game = self.games.get(scope)
+            if not game:
+                return
+            if not await self.admin_or_host(user['id'],game):
+                await self.api.send(ctx,'هذا الأمر لصاحب اللعبة أو أدمن الكروب.')
+                return
+            if name == 'skip':
+                await self.reveal(scope)
+            else:
+                self.store.delete(scope)
+                del self.games[scope]
+                await self.api.send(ctx,'تم إيقاف اللعبة. النقاط المكتسبة محفوظة. /newgame')
+        elif name == 'score':
+            game = self.games.get(scope)
+            rows = sorted((game or {}).get('scores',{}).values(),key=lambda r:-r['points'])
+            await self.api.send(ctx,'🏆 نقاط الكيم\n'+'\n'.join(f'{r["name"]}: {r["points"]}' for r in rows[:15]) if rows else 'ماكو نقاط بالكيم الحالي.')
+        elif name == 'leaderboard':
+            rows = self.store.board(scope)
+            await self.api.send(ctx,'🏆 النقاط المحفوظة بهذا القسم\n'+'\n'.join(f'{i}. {name}: {points} points ({wins} wins)' for i,(name,points,wins) in enumerate(rows,1)) if rows else 'بعد ماكو نقاط محفوظة.')
+        elif name == 'bank':
+            lines = ['📚 Base cases / difficulty presentations']
+            for key,label in SPECIALTIES.items():
+                count = sum(c['specialty']==key for c in self.bank.cases)
+                lines.append(f'{label}: {count} / {count*3}')
+            await self.api.send(ctx,'\n'.join(lines))
+
+    async def handle(self, update):
+        async with self.lock:
+            if 'callback_query' in update:
+                await self.callback(update['callback_query'])
+                return
+            # Edited answers are deliberately ignored.
+            message = update.get('message')
+            if not message or 'text' not in message or not message.get('from') or message['from'].get('is_bot'):
+                return
+            user, text = message['from'], message['text'].strip()
+            if text.startswith('/'):
+                command, _, arg = text.partition(' ')
+                target = command.split('@',1)
+                if len(target)>1 and target[1].lower()!=self.username.lower():
+                    return
+                await self.command(message,user,target[0][1:].lower(),arg.strip())
+            else:
+                scope = scope_key(message['chat']['id'],message.get('message_thread_id'))
+                menu = self.menus.get(scope)
+                if menu and menu['stage']=='custom' and menu['host_id']==user['id']:
+                    if text.isdigit() and 1<=int(text)<=50:
+                        await self.begin(scope,int(text))
+                    return
+                await self.answer(message,user,text)
+
+    async def recover(self):
+        for scope,game in list(self.games.items()):
+            try:
+                if any(cid not in self.bank.by_id for cid in game['case_ids']):
+                    raise ValueError('The bank changed during an active game')
+                await self.api.send(game,'🔄 البوت رجع بعد إعادة التشغيل. راح يكمل من الكيس الحالي، والنقاط محفوظة.')
+                if game['phase']=='clue':
+                    await self.send_clue(scope)
+                else:
+                    game['deadline']=self.clock()+5
+                    self.save(scope)
+            except (TelegramError,ValueError):
+                LOG.warning('Could not restore an active game; scores retained')
+                self.store.delete(scope)
+                self.games.pop(scope,None)
+
+async def run():
+    load_env()
+    token = os.getenv('BOT_TOKEN','').strip()
+    if not token or token=='PUT_YOUR_TOKEN_HERE':
+        raise SystemExit('Set BOT_TOKEN in environment or .env first. Do not publish your token.')
+    api = Telegram(token)
+    bank = Bank(ROOT/'data'/'cases.json')
+    store = Store(os.getenv('DB_PATH',str(ROOT/'state'/'game.sqlite3')))
+    try:
+        clue_seconds = int(os.getenv("CLUE_SECONDS", str(CLUE_SECONDS)))
+        if clue_seconds <= 0:
+            raise ValueError
+    except ValueError:
+        raise SystemExit("CLUE_SECONDS must be a positive integer in seconds, e.g. 40.") from None
+    bot = GameBot(api,bank,store,clue_seconds=clue_seconds)
+    identity = await api.call('getMe')
+    bot.username = identity['username']
+    # Polling needs an unoccupied webhook. Preserve pending updates; stale answer timestamps are rejected.
+    await api.call('deleteWebhook',drop_pending_updates=False)
+    commands = [{'command':c,'description':d} for c,d in [('newgame','Start a diagnosis game'),('help','Game instructions'),('guess','Submit a diagnosis'),('score','Current game scores'),('leaderboard','Saved scores'),('stop','Stop the game'),('skip','Skip current case'),('bank','Case bank statistics')]]
+    await api.call('setMyCommands',commands=commands)
+    await bot.recover()
+    offset = None
+    async def scheduler():
+        while True:
+            await bot.tick()
+            await asyncio.sleep(0.25)
+    task = asyncio.create_task(scheduler())
+    LOG.info('Bot ready; %s base cases. Keep one polling instance.',len(bank.cases))
+    try:
+        while True:
+            try:
+                updates = await api.call('getUpdates',offset=offset,timeout=30,allowed_updates=['message','callback_query'])
+                for update in updates:
+                    try:
+                        await bot.handle(update)
+                    except TelegramError as exc:
+                        LOG.warning('Update delivery failed with code %s',exc.code)
+                    except Exception:
+                        LOG.error('Unexpected update processing failure; update was not replayed')
+                    offset = update['update_id']+1
+            except TelegramError as exc:
+                if exc.code in (401,409):
+                    raise SystemExit('Invalid BOT_TOKEN or another polling instance is running.') from None
+                LOG.warning('Polling unavailable; retrying (code %s)',exc.code)
+                await asyncio.sleep(3)
+    finally:
+        task.cancel()
+        await asyncio.gather(task,return_exceptions=True)
+        store.db.close()
 
 if __name__=='__main__':
-    main()
+    logging.basicConfig(level=logging.INFO,format='%(levelname)s %(message)s')
+    try:
+        asyncio.run(run())
+    except KeyboardInterrupt:
+        pass
